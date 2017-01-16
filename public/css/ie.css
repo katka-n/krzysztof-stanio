@@ -1,0 +1,13 @@
+/*-----menu-----*/
+nav.tm_navbar li.active > a {
+    color: #b93a41;
+}
+nav.tm_navbar li:hover > a {
+  color: #b93a41;
+}
+nav.tm_navbar .sfHover > a {
+  color: #b93a41;
+}
+header {
+    position:relative;
+}
