@@ -68,6 +68,10 @@ h4 {
 	padding: 107px 0 0 0;
 	background: #f2f2f2;
 }
+.global2 {
+	padding: 107px 0 0 0;
+	background: #ffffff;
+}
 .global.indent {
 	padding: 100px 0 0 0;
 	background: #f2f2f2;
@@ -471,6 +475,7 @@ footer span {
 	padding: 62px 0 67px 0;
 	background: #f2f2f2 url(../img/triangle2.png) center top no-repeat;
 }
+
 .thumb-box2 figure {
 	margin-bottom: 39px;
 }
@@ -502,6 +507,7 @@ footer span {
 	padding: 62px 0 10px 0;
 	background: #ffffff url(../img/triangle.png) center top no-repeat;
 }
+
 .thumb-box6 .box {
 	margin-bottom: 37px;
 }
@@ -513,23 +519,32 @@ footer span {
 .thumb-box7 .col-lg-4 {
 	margin-bottom: 30px;
 }
+
+.thumb-box8 {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 10px 0;
+	background: #ffffff;
+}
+
 .date-box {
 	margin-bottom: 39px;
 }
 .date-box > div {
 	background: #bb4148;
-	padding: 52px 35px 43px 50px;
+	padding: 50px;
+	/*35px 43px 20px;*/
 	overflow: hidden;
-	text-align: left;
+	height: 487px;
 }
 .date-box > div .badge {
 	padding: 0;
 	margin: 0;
-	width: 55px;
+	/*width: 55px;*/
 	text-align: center;
 	border-radius: 0;
 	background: none;
-	float: left;
+	float: center;
 	margin: 0 26px 20px 0;
 	font: bold 60px/36px 'Passion One';
 	color: #ffffff;
@@ -872,6 +887,12 @@ footer span {
 	display: block;
 	text-transform: uppercase;
 }
+.thumb-pad7 .badge_small span {
+	font-size: 30px;
+	display: block;
+	text-transform: uppercase;
+}
+
 .thumb-pad7 .badge strong {
 	font-size: 20px;
 	line-height: 35px;
@@ -979,6 +1000,30 @@ footer span {
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
+.btn-default.btn2 {
+	box-shadow: none;
+	text-decoration: none !important;
+	display: inline-block;
+	padding: 0 20px;
+	font: bold 13px/34px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-transform: uppercase;
+	text-shadow: none;
+	border-radius: 0;
+	color: #ffffff;
+	background: #555a78;
+	border: 1px solid #555a78;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+.btn-default.btn2:hover {
+	color: #ffffff;
+	background: transparent !important;
+	text-decoration: none !important;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
 /*-----list-----*/
 .list1-1 {
 	margin: 0;
@@ -1490,4 +1535,47 @@ footer span {
 /*-------------------------------------------------*/
 /*-------------------------------------------------*/
 /*-------------------------------------*/
-s
+
+.pagination > li > a,
+.pagination > li > span {
+	color: black;
+
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+	background-color: #555a78;
+	border-color: #555a78;
+	text-align: center;
+	transition: all 0.25s;
+}
+
+
+.video-container {
+	position:relative;
+	padding-bottom:400px;
+	height:0;
+	overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	height: 50%;
+	width: 50%;
+}
+
+.thumbnail img {
+	height:250px;
+	width:100%;
+}
+
+.thumbnail_small img {
+	height:50px;
+	width:100%;
+}

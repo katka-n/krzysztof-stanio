@@ -69,17 +69,17 @@
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li class="active sub-menu"><a href="{{URL::to('/') }}">start</a><span></span>
-                        <ul class="submenu">
-                            <li><a href="#">About</a><span></span>
-                                <ul class="submenu">
-                                    <li><a href="#">Fresh</a></li>
-                                    <li><a href="#">Archive</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">News</a></li>
-                        </ul>
-                    </li>
+                        {{--<ul class="submenu">--}}
+                            {{--<li><a href="#">About</a><span></span>--}}
+                                {{--<ul class="submenu">--}}
+                                    {{--<li><a href="#">Fresh</a></li>--}}
+                                    {{--<li><a href="#">Archive</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li><a href="#">History</a></li>--}}
+                            {{--<li><a href="#">News</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                     <li><a href="{{URL::to('blog') }}">blog</a></li>
                     <li><a href="{{URL::to('kurs') }}">kurs</a></li>
                     <li><a href="{{URL::to('absolwenci') }}">absolwenci kursu</a></li>
@@ -89,6 +89,7 @@
         </div>
     </div>
 </header>
+
 
 @section('footer')
     <!--footer-->
@@ -105,6 +106,7 @@
 </html>
 
 @stop
+
 
 
 @yield('content')

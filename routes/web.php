@@ -11,20 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::post('save', [
+    'uses' => 'NewsletterController@store',
+    'as' => 'email.save',
+]);
 
 
-Route::get('blog', function()
-{
-    return view('index-1');
-});
+Route::get('/', [
+    'uses' => 'PostController@index',
+    'as' => 'index',
+]);
 
-Route::get('absolwenci', function()
-{
-    return view('index-2');
-});
+Route::get('/blog', [
+    'uses' => 'PostController@blog_index',
+    'as' => 'blog',
+]);
+
+Route::get('blog/{name}', [
+    'uses' => 'PostController@entry',
+    'as' => 'posts',
+]);
+
+
+Route::get('absolwenci', [
+    'uses' => 'GraduatesController@index',
+    'as' => 'absolwenci',
+]);
+
+Route::get('graduates/{name}', [
+    'uses' => 'GraduatesController@single_graduate',
+    'as' => 'graduates',
+]);
+
 
 Route::get('kurs', function()
 {
