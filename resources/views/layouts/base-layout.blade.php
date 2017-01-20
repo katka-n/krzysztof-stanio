@@ -14,6 +14,8 @@
 <!--CSS-->
 <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}" />
 <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
+
+
 <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}" />
 <link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome.css') }}" />
 <link rel="stylesheet" href="{{ URL::asset('css/contact-form.css') }}" />

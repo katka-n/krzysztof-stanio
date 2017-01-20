@@ -1,8 +1,6 @@
 @extends('layouts.base-layout')
 
 @section('content')
-
-    <body>
     <!--header-->
     <div class="global indent">
         <!--content-->
