@@ -9,11 +9,11 @@
                     <h2 class="center indent">blog</h2>
                     <div class="thumb-pad7 clearfix">
                         <div class="extra-wrap">
-                            <div class="badge">
-                                {!! pol_day($posts) !!}
-                                <span>{!! pol_month($posts) !!}</span>
-                                <div class="badge_small">
-                                    <span>{!! year($posts) !!}</span>
+                            <div>
+                                <div class="badge">
+                                    {!! pol_day($posts) !!}
+                                    <span>{!! pol_month($posts) !!}</span>
+                                    <strong>{!! year($posts) !!}</strong>
                                 </div>
                             </div>
 

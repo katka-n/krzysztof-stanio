@@ -46,7 +46,7 @@ class PostController extends Controller
         return view('index-2', ['posts' => $posts, 'categories' => $categories]);
     }
 
-    //wyswietlanie po kategorii
+    //wyswietlanie po kategorii lub po id
     public function entry($name)
     {
         if (is_numeric($name)) {
