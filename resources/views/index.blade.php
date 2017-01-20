@@ -8,43 +8,35 @@
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
         </div>
     </div>
+
     <div class="global2">
         <!--content-->
         <div class="thumb-box8 center">
             <div class="container">
                 <h2 class="center">Najnowszy wpis na blogu</h2>
                 @for ($i = 0; $i < 1; $i++)
-                    <a href="/blog/{{$posts[$i]['id']}}" class="lnk"><p class="center"><br>{{$posts[$i]['title']}} </p>
-                    </a>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 col-sm-12 date-box wow fadeInLeft" data-wow-delay="0.2s">
-                            <div>
-                                <div class="badge">
-                                    {!! pol_day($posts[$i]) !!}
-                                    <span>{!! pol_month($posts[$i]) !!}</span>
-                                    <div class="badge_small">
-                                        <span>{!! year($posts[$i]) !!}</span>
-                                    </div>
-                                </div>
-                                <div class="extra-wrap">
-                                    <p>{{$posts[$i]['excerpt']}}</p>
-                                </div>
+                <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 date-box wow fadeInLeft" data-wow-delay="0.2s">
+                        <div>
+                            <div class="badge">
+                                {!! pol_day($posts[$i]) !!}
+                                <span>{!! pol_month($posts[$i]) !!}</span>
+                                <strong>{!! year($posts[$i]) !!}</strong>
                             </div>
-                        </div>
-
-                        <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInLeft">
-                            {{--<div class="video-container">--}}
-                                {{--{!! iframe_search($posts) !!}--}}
-                            {{--</div>--}}
-                            {!! $posts[$i]['body'] !!}
+                        <div class="extra-wrap">
+                            <p>{{$posts[$i]['excerpt']}}</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInLeft">
+                    <figure><img src="/storage/{!! $posts[$i]['image'] !!}" alt=""></figure>
+                </div>
             </div>
-            <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie wpisy</a>
+                <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie wpisy</a>
         </div>
-        @endfor
-    </div>
+            @endfor
 
+        </div>
 
     <div class="thumb-box2">
         <div class="container">
@@ -69,7 +61,6 @@
             </div>
         </div>
     </div>
-
 
         <div class="thumb-box1 center">
             <div class="container">

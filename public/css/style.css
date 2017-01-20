@@ -1,5 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
-@import url(//fonts.googleapis.com/css?family=Passion+One:400,700,900);
+/*@import url(//fonts.googleapis.com/css?family=Passion+One:400,700,900);*/
+@import url(//fonts.googleapis.com/css?family=Oswald:400,400,700);
+
 body {
 	background: #c8474f;
 	font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -41,7 +43,7 @@ h1.navbar-brand_ a {
 	padding: 0;
 }
 h2 {
-	font: bold 30px/28px 'Passion One';
+	font: bold 30px/28px 'Oswald';
 	color: #555a78;
 	text-transform: uppercase;
 	margin: 1px 0 21px 0;
@@ -50,7 +52,7 @@ h2.indent {
 	margin: 0 0 27px 0;
 }
 h3 {
-	font: bold 22px/30px 'Passion One';
+	font: bold 22px/30px 'Oswald';
 	color: #555a78;
 	text-transform: uppercase;
 	margin: 0 0 11px 0;
@@ -398,7 +400,7 @@ footer span {
 }
 .bg_pic .title {
 	color: #ffffff;
-	font: bold 60px/60px 'Passion One';
+	font: bold 60px/60px 'Oswald';
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin-bottom: 8px;
@@ -532,32 +534,35 @@ footer span {
 }
 .date-box > div {
 	background: #bb4148;
-	padding: 50px;
-	/*35px 43px 20px;*/
+	padding: 52px 35px 43px 50px;
 	overflow: hidden;
-	height: 487px;
+	text-align: left;
 }
+
 .date-box > div .badge {
 	padding: 0;
 	margin: 0;
-	/*width: 55px;*/
+	width: 55px;
 	text-align: center;
 	border-radius: 0;
+	margin-top: 15px;
 	background: none;
-	float: center;
+	float: left;
 	margin: 0 26px 20px 0;
-	font: bold 60px/36px 'Passion One';
+	font: bold 40px/36px 'Oswald';
 	color: #ffffff;
 }
 .date-box > div .badge span {
 	font-size: 36px;
 	display: block;
 	text-transform: uppercase;
+	margin-top: 7px;
+
 }
 .date-box > div .badge strong {
 	font-size: 20px;
 	line-height: 35px;
-	margin-top: 15px;
+	margin-top: 7px;
 	border-top: 1px solid #ffffff;
 	border-bottom: 1px solid #ffffff;
 	display: block;
@@ -700,7 +705,7 @@ footer span {
 }
 .thumb-pad1 .thumbnail .caption .title {
 	text-transform: uppercase;
-	font: bold 22px 'Passion One';
+	font: bold 22px 'Oswald';
 	color: #555a78;
 	margin-bottom: 13px;
 }
@@ -879,7 +884,7 @@ footer span {
 	background: none;
 	float: left;
 	margin: 8px 38px 20px 0;
-	font: bold 60px/36px 'Passion One';
+	font: bold 60px/36px 'Oswald';
 	color: #bb4148;
 }
 .thumb-pad7 .badge span {
@@ -1077,7 +1082,7 @@ footer span {
 	background: #b93a41;
 	float: left;
 	margin: 0 30px 0 0;
-	font: bold 50px/69px 'Passion One';
+	font: bold 50px/69px 'Oswald';
 	color: #ffffff;
 }
 .list2 {
@@ -1182,7 +1187,7 @@ footer span {
 	background: none;
 	float: left;
 	margin: 0 38px 20px 0;
-	font: bold 60px/36px 'Passion One';
+	font: bold 60px/36px 'Oswald';
 	color: #bb4148;
 }
 .list6 li .badge span {
