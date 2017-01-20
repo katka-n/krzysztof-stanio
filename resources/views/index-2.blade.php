@@ -1,9 +1,9 @@
 @extends('layouts.base-layout')
 
 @section('content')
-
     <div class="global indent">
         <!--content-->
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8 thumb-box4">
@@ -15,7 +15,7 @@
                                     {!! pol_day($post) !!}
                                     <span>{!! pol_month($post) !!}</span>
                                     <div class="badge_small">
-                                        <span>{!! year($post) !!}</span>
+                                        <strong>{!! year($post) !!}</strong>
                                     </div>
                                 </div>
 

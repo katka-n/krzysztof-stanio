@@ -884,7 +884,7 @@ footer span {
 	background: none;
 	float: left;
 	margin: 8px 38px 20px 0;
-	font: bold 60px/36px 'Oswald';
+	font: bold 40px/36px 'Oswald';
 	color: #bb4148;
 }
 .thumb-pad7 .badge span {
@@ -901,7 +901,7 @@ footer span {
 .thumb-pad7 .badge strong {
 	font-size: 20px;
 	line-height: 35px;
-	margin-top: 15px;
+	margin-top: 7px;
 	border-top: 1px solid #c1c1c1;
 	border-bottom: 1px solid #c1c1c1;
 	display: block;
