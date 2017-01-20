@@ -10,27 +10,23 @@
                     <h2 class="center indent">blog</h2>
                     <div class="thumb-pad7 clearfix">
                         <div class="extra-wrap">
-                            @foreach($posts as $post)
-                                <div class="badge">
-                                    {!! pol_day($post) !!}
-                                    <span>{!! pol_month($post) !!}</span>
-                                    <div class="badge_small">
-                                        <span>{!! year($post) !!}</span>
-                                    </div>
+                            <div class="badge">
+                                {!! pol_day($posts) !!}
+                                <span>{!! pol_month($posts) !!}</span>
+                                <div class="badge_small">
+                                    <span>{!! year($posts) !!}</span>
                                 </div>
+                            </div>
 
-                                <a href="/blog/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
-                                <p class="post">Wysłane {{$post['created_at']}}, w
-                                    kategorii {!! category_name($post, $categories) !!}
-                                    <br></p>
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <p> {!!$post['body']!!}.</p>
-                                    </div>
+                            <a href="/blog/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
+                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {{$posts['category_id']}}
+                                <br></p>
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p> {!!$posts['body']!!}.</p>
                                 </div>
-                            @endforeach
+                            </div>
                             <div class="btn-default.btn1" , style="text-align:center;">
-                                {{--{{ $posts->links() }}--}}
                             </div>
                         </div>
                     </div>
@@ -55,9 +51,7 @@
                         <li><a href="#">October 2012</a></li>
                     </ul>
                 </div>
-
             </div>
-
         </div>
     </div>
 
