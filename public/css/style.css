@@ -50,7 +50,9 @@ h2 {
 }
 h2.indent {
 	margin: 0 0 27px 0;
+	line-height: 40px;
 }
+
 h3 {
 	font: bold 22px/30px 'Oswald';
 	color: #555a78;
@@ -71,7 +73,6 @@ h4 {
 	background: #f2f2f2;
 }
 .global2 {
-	padding: 107px 0 0 0;
 	background: #ffffff;
 }
 .global.indent {
