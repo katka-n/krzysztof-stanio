@@ -62,6 +62,7 @@
         </div>
     </div>
 
+
         <div class="thumb-box1 center">
             <div class="container">
             <h2 class="center">Najnowsze wpisy</h2>
@@ -93,12 +94,12 @@
 
                     {!! Form::open(['method' => 'POST',
                      'route' => 'email.save',
-                      'class' => 'form-horizontal']) !!}
-                    {!! Form::email('email', '', ['class'=>'btn default btn1']) !!}
+                      'id' => 'newsletter']) !!}
+                    {!! Form::email('email', '', array()) !!}
                     <br> <br>
-                    {!! Form::submit('Wyślij!', ['class'=>'btn default btn1']) !!}
-                    {!! Form::close() !!}
+                    {!! Form::submit('Wyślij!', array()) !!}
 
+                    {!! Form::close() !!}
 
                 </div>
             </div>

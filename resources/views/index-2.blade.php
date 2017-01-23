@@ -18,7 +18,6 @@
                                         <strong>{!! year($post) !!}</strong>
                                     </div>
                                 </div>
-
                                 <a href="/blog/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
                                 <p class="post">Wysłane {{$post['created_at']}}, w
                                     kategorii {!! category_name($post, $categories) !!}
@@ -30,7 +29,7 @@
                                 </div>
                             @endforeach
                             <div class="btn-default.btn1" , style="text-align:center;">
-                                {{--{{ $posts->links() }}--}}
+                                {{ $posts->render() }}
                             </div>
                         </div>
                     </div>

@@ -70,22 +70,23 @@
             <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img src="{{ URL::asset('img/logo.png') }}"alt="logo"width="130" height="130"></a></h1>
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
-                    <li class="active sub-menu"><a href="{{URL::to('/') }}">start</a><span></span>
-                        {{--<ul class="submenu">--}}
-                            {{--<li><a href="#">About</a><span></span>--}}
-                                {{--<ul class="submenu">--}}
-                                    {{--<li><a href="#">Fresh</a></li>--}}
-                                    {{--<li><a href="#">Archive</a></li>--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li><a href="#">History</a></li>--}}
-                            {{--<li><a href="#">News</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                    <li><a href="{{URL::to('blog') }}">blog</a></li>
-                    <li><a href="{{URL::to('kurs') }}">kurs</a></li>
-                    <li><a href="{{URL::to('absolwenci') }}">absolwenci kursu</a></li>
-                    <li><a href="{{URL::to('kontakt') }}">kontakt</a></li>
+
+                    <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('/')}}">start</a></li>
+
+                    <li class="{{ Request::is('blog') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('blog')}}">blog</a></li>
+
+                    <li class="{{ Request::is('kurs') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('kurs')}}">kurs</a></li>
+
+                    <li class="{{ Request::is('absolwenci') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
+
+                    <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('kontakt')}}">kontakt</a></li>
+
+
                 </ul>
             </nav>
         </div>
@@ -97,8 +98,7 @@
     <!--footer-->
     <footer>
         <div class="container">
-            <p>Krzysztof Stanio &copy; <em id="copyright-year"></em> <span>|</span> <a
-                        href="{{URL::to('privacy_policy') }}">Polityka prywatności</a></p>
+            <p>Krzysztof Stanio &copy; <em id="copyright-year"></em> </p>
             <p class="foo_address">Ketlinga 1<br>32-020 Kraków</p>
         </div>
     </footer>

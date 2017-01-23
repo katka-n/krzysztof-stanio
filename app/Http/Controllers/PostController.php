@@ -9,6 +9,7 @@ use App\Categories;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 
 class PostController extends Controller
@@ -64,7 +65,8 @@ class PostController extends Controller
                 ->get();
             $posts = json_decode($post, true);
 
-            return view('index-2', ['posts' => $posts, 'categories' => $categories ]);
+
+            return view('index-5', ['posts' => $posts, 'categories' => $categories ]);
         }
 
 

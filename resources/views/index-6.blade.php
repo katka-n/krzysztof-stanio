@@ -26,6 +26,8 @@
                                 </div>
                             </div>
                             <div class="btn-default.btn1" , style="text-align:center;">
+                                {{ $posts->render() }}
+
                             </div>
                         </div>
                     </div>
