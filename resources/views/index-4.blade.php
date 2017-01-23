@@ -41,10 +41,10 @@
 
                         <div id="contact-form">
                             <div class="contact-form-loader"></div>
+                            {{--{{ crsf_token() }}--}}
 
 
-                            {!! Form::open(['method' => 'POST','route' => 'contact_store']) !!}
-
+                            {!! Form::open(['method' => 'POST','route' => 'contact']) !!}
                             <label class="name form-div-1">
                                 {!! Form::text('name', null,
                                     array('required',

@@ -1,36 +1,46 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Mail;
+use App\Mail\MyTestMail;
+use App\Http\Requests\ContactFormRequest;
 
 class ContactFormController extends Controller
+
 {
-    public function create()
+
+    public function get()
     {
         return view('index-4');
     }
 
 
-    public function store(ContactFormRequest $request)
+    public function send(ContactFormRequest $request)
     {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'message' => 'min:10'
+        ]);
 
-        mail::send('emails.contact',
-            array(
-                'name' => $request->get('name'),
-                'email' => $request->get('email'),
-                'phone' => $request->get('phone'),
-                'user_message' => $request->get('message')
+        $data = array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'bodyMessage' => $request->message,
+        );
 
-            ), function ($message) {
-                $message->from('katarzynan@gmail.com');
-                $message->to('katarzynan@gmail.com', 'Admin')->subject('Formularz kontaktowy z krzysztof-stanio.pl');
-            });
+        Mail::send('emails.contact', $data, function ($message) use ($data) {
+            $message->from($data['email']);
+            $message->to('katarzynan@gmail.com');
+            $message->subject('Nowa wiadomość');
+        });
 
-        return redirect('kontakt')->with('message', 'Dziękuję za wiadomość');
+        return redirect('contact')->with('message', 'Dziękuję za wiadomość');
 
 
     }
 }
+
+

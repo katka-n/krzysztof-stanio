@@ -38,7 +38,7 @@
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
                                         <p>{{$graduates[$i]['description']}}</p>
-                                        <a href="/graduates/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
+                                        <a href="/absolwent/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
                                             dalej...</a>                                    </div>
                                 </div>
                             </div>

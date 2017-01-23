@@ -28,8 +28,8 @@
                                 <div class="caption">
                                     <h3>Dane kontaktowe</h3>
                                     <ul class="list1-1">
-                                        <li>e-mail: {{$graduate['contact_mail']}}</a></li>
-                                        <li>telefon: {{$graduate['contact_phone']}}</a></li>
+                                        <li>e-mail: {{$graduate['contact_mail']}}</li>
+                                        <li>telefon: {{$graduate['contact_phone']}}</li>
                                         <li><a href="{{$graduate['social_account']}}">Facebook</a></li>
                                     </ul>
                                     <h3>Portfolio</h3>
