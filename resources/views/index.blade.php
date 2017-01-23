@@ -2,15 +2,18 @@
 
 @section('content')
 
+
     <div class="bg_pic">
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
+
         </div>
     </div>
 
     <div class="global2">
         <!--content-->
+
         <div class="thumb-box8 center">
             <div class="container">
                 <h2 class="center">Najnowszy wpis na blogu</h2>
@@ -89,6 +92,7 @@
             <h2 class="wow fadeInUp">newsletter</h2>
             <p class="wow fadeInUp">Jeżeli chcesz otrzymywać powiadomienia o najnowszych wpisach, kursach - wpisz swój
                 adres e-mail.</p>
+
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp">
 
@@ -102,6 +106,10 @@
                     {!! Form::close() !!}
 
                 </div>
+                <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
+
+
+
             </div>
         </div>
     </div>

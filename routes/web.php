@@ -43,22 +43,19 @@ Route::get('graduates/{name}', [
     'as' => 'graduates',
 ]);
 
-
 Route::get('kurs', function()
 {
     return view('index-3');
 });
 
-Route::get('kontakt', function()
-{
-    return view('index-4');
-});
-
-Route::get('privacy_policy', function()
-{
-    return view('index-5');
-});
-
+Route::get('kontakt', [
+    'as' => 'contact',
+    'uses' => 'ContactFormController@create',
+]);
+Route::post('kontakt', [
+    'as' => 'contact_store',
+    'uses' => 'ContactFormController@store',
+]);
 
 
 Route::group(['prefix' => 'admin'], function () {
