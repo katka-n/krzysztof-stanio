@@ -23,26 +23,41 @@
                         </div>
                     </div>
 
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+
+                    @if(Session::has('message'))
+                        <div class="alert alert-info">
+                            {{Session::get('message')}}
+                        </div>
+                    @endif
+
+
                     <div class="col-lg-8 col-md-8 col-sm-8">
                         <h2 class="center indent">Formularz kontaktowy</h2>
 
+                        <div id="contact-form">
                             <div class="contact-form-loader"></div>
 
-                            {!! Form::open(array('route' => 'contact_store', 'id' => 'contact-form')) !!}
 
-                            <div class="name form-div-1">
+                            {!! Form::open(['method' => 'POST','route' => 'contact_store']) !!}
+
+                            <label class="name form-div-1">
                                 {!! Form::text('name', null,
                                     array('required',
                                           'class'=>'form-control',
-                                          'placeholder'=>'Imię i nazwisko'
+                                          'placeholder'=>'Imię i nazwisko',
                                           )) !!}
-                            </div>
+                            </label>
 
                             <label class="email form-div-2">
                                 {!! Form::text('email', null,
                                     array('required',
                                           'class'=>'form-control',
-                                          //'placeholder'=>'adres e-mail'
+                                          'placeholder'=>'adres e-mail',
                                           )) !!}
                             </label>
 
@@ -50,7 +65,7 @@
                                 {!! Form::text('phone', null,
                                     array('required',
                                           'class'=>'form-control',
-                                          //'placeholder'=>'numer telefonu'
+                                          'placeholder'=>'numer telefonu',
                                           )) !!}
                             </label>
 
@@ -58,16 +73,17 @@
                                 {!! Form::textarea('message', null,
                                     array('required',
                                           'class'=>'form-control',
-                                          //'placeholder'=>'Wiadomość'
+                                          'placeholder'=>'Wiadomość',
                                           )) !!}
                             </label>
 
-                            <label class="form-group">
+                            <div class="form-group">
                                 {!! Form::submit('Wyślij!',
                                   array('class'=>'btn-default btn1')) !!}
-                            </label>
+                            </div>
 
                             {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
             </div>

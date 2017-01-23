@@ -87,13 +87,14 @@
             @endforeach
         </div>
     </div>
+
     <div class="thumb-box3">
         <div class="container">
             <h2 class="wow fadeInUp">newsletter</h2>
             <p class="wow fadeInUp">Jeżeli chcesz otrzymywać powiadomienia o najnowszych wpisach, kursach - wpisz swój
                 adres e-mail.</p>
 
-            <div class="row">
+            <div class="row" id="newsletter">
                 <div class="col-lg-12 wow fadeInUp">
 
                     {!! Form::open(['method' => 'POST',
