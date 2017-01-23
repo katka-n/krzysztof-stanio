@@ -11,17 +11,19 @@
 |
 */
 
+// zapisanie adresu e-mail do bazy maailingowej
 Route::post('save', [
     'uses' => 'NewsletterController@store',
     'as' => 'email.save',
 ]);
 
-
+//index
 Route::get('/', [
     'uses' => 'PostController@index',
     'as' => 'index',
 ]);
 
+//blog
 Route::get('/blog', [
     'uses' => 'PostController@blog_index',
     'as' => 'blog',
@@ -32,32 +34,35 @@ Route::get('blog/{name}', [
     'as' => 'posts',
 ]);
 
-
+//absolwenci
 Route::get('absolwenci', [
     'uses' => 'GraduatesController@index',
     'as' => 'absolwenci',
 ]);
 
-Route::get('graduates/{name}', [
+Route::get('graduates/{id}', [
     'uses' => 'GraduatesController@single_graduate',
     'as' => 'graduates',
 ]);
 
+//kirs
 Route::get('kurs', function()
 {
     return view('index-3');
 });
 
+//formularz kontaktowy
 Route::get('kontakt', [
     'as' => 'contact',
-    'uses' => 'ContactFormController@create',
+    'uses' => 'ContactFormController@get',
 ]);
+
 Route::post('kontakt', [
-    'as' => 'contact_store',
-    'uses' => 'ContactFormController@store',
+    'as' => 'contact',
+    'uses' => 'ContactFormController@send',
 ]);
 
-
+// routingi Voyagera
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
