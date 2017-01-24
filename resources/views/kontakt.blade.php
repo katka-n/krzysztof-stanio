@@ -26,24 +26,24 @@
                             <div class="contact-form-loader"></div>
                             <fieldset>
                                 <label class="name form-div-1">
-                                    <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters"  />
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid name.</span>
+                                    <input type="text" name="name" placeholder="Imię:" value="" data-constraints="@Required @JustLetters"  />
+                                    <span class="empty-message">*To pole jest wymagane.</span>
+                                    <span class="error-message">*Wpisz swoje imię/nazwisko.</span>
                                 </label>
                                 <label class="email form-div-2">
                                     <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid email.</span>
+                                    <span class="empty-message">*To pole jest wymagane..</span>
+                                    <span class="error-message">*To nie jest prawidłowy adres e-mail.</span>
                                 </label>
                                 <label class="phone form-div-3">
-                                    <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@JustNumbers" />
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid phone.</span>
+                                    <input type="text" name="phone" placeholder="Telefon:" value="" data-constraints="@JustNumbers" />
+                                    <span class="empty-message">*To pole jest wymagane.</span>
+                                    <span class="error-message">*To nie jest prawidłowy numer telefonu.</span>
                                 </label>
                                 <label class="message form-div-4">
-                                    <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*The message is too short.</span>
+                                    <textarea name="message" placeholder="Wiadomość:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                    <span class="empty-message">*To pole jest wymagane.</span>
+                                    <span class="error-message">*Wiadomość jest zbyt krótka.</span>
                                 </label>
                                 <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
                                 <div>
@@ -58,7 +58,7 @@
                                             <h4 class="modal-title">Modal title</h4>
                                         </div>
                                         <div class="modal-body">
-                                            You message has been sent! We will be in touch soon.
+                                            Wiadomość została wysłana! Wkrótce na nią odpowiem.
                                         </div>
                                     </div>
                                 </div>
