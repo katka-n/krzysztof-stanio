@@ -18,7 +18,7 @@
                             </div>
 
                             <a href="/blog/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
-                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {{$posts['category_id']}}
+                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {!! category_name($posts, $categories) !!}
                                 <br></p>
                             <div class="thumbnail">
                                 <div class="caption">
