@@ -52,7 +52,7 @@
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="thumb-pad2 wow fadeInRight">
                                 <div class="thumbnail">
-                                    <img src="{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
+                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
                                         <p>{{$graduates[$i]['description']}}</p>
