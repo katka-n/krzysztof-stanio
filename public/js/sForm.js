@@ -7,7 +7,7 @@
 			,bl,vl
 			
 		o=$.extend({
-			ownerEmail:'katarzynan@gmail.com'
+			ownerEmail:'kontakt@krzysztof-stanio.pl'
 			,mailHandlerURL:'bat/MailHandler-sub.php'
 		},o)
 		
@@ -105,7 +105,7 @@
 })(jQuery)
 $(window).load(function(){
 	$('#newsletter').sForm({			
-		ownerEmail:'katarzynan@gmail.com'
+		ownerEmail:'kontakt@krzysztof-stanio.pl'
 		,sitename:'sitename.link'
 	})
 })

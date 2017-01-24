@@ -1,12 +1,12 @@
 <?php
-	$owner_email='#';
+	$owner_email='kontakt@krzysztof-stanio.pl';
 	//SMTP server settings	
 	$host = '';
     $port = '465';//"587";
     $username = '';
     $password = '';
 
-    $subject='A message from your site visitor ';
+    $subject='Cześć! Masz nową wiadomość ze strony krzysztof-stanio.pl ';
     $user_email='';    
 	$message_body='';
 	$message_type='html';
@@ -40,12 +40,12 @@
 		}
 	}
 	
-	if(isset($_POST['name']) and $_POST['name'] != ''){$message_body .= '<p>Visitor: ' . $_POST['name'] . '</p>' . "\n" . '<br>' . "\n"; $subject.=$_POST['name'];}
-	if(isset($_POST['email']) and $_POST['email'] != ''){$message_body .= '<p>Email Address: ' . $_POST['email'] . '</p>' . "\n" . '<br>' . "\n"; $user_email=$_POST['email'];}
+	if(isset($_POST['name']) and $_POST['name'] != ''){$message_body .= '<p>Od: ' . $_POST['name'] . '</p>' . "\n" . '<br>' . "\n"; $subject.=$_POST['name'];}
+	if(isset($_POST['email']) and $_POST['email'] != ''){$message_body .= '<p>Adres e-mail ' . $_POST['email'] . '</p>' . "\n" . '<br>' . "\n"; $user_email=$_POST['email'];}
 	if(isset($_POST['state']) and $_POST['state'] != ''){$message_body .= '<p>State: ' . $_POST['state'] . '</p>' . "\n" . '<br>' . "\n";}
-	if(isset($_POST['phone']) and $_POST['phone'] != ''){$message_body .= '<p>Phone Number: ' . $_POST['phone'] . '</p>' . "\n" . '<br>' . "\n";}	
+	if(isset($_POST['phone']) and $_POST['phone'] != ''){$message_body .= '<p>Numer telefonu: ' . $_POST['phone'] . '</p>' . "\n" . '<br>' . "\n";}
 	if(isset($_POST['fax']) and $_POST['fax'] != ''){$message_body .= '<p>Fax Number: ' . $_POST['fax'] . '</p>' . "\n" . '<br>' . "\n";}
-	if(isset($_POST['message']) and $_POST['message'] != ''){$message_body .= '<p>Message: ' . $_POST['message'] . '</p>' . "\n";}	
+	if(isset($_POST['message']) and $_POST['message'] != ''){$message_body .= '<p>Wiadomość: ' . $_POST['message'] . '</p>' . "\n";}
 	if(isset($_POST['stripHTML']) and $_POST['stripHTML']=='true'){$message_body = strip_tags($message_body);$message_type='text';}
 
 try{
