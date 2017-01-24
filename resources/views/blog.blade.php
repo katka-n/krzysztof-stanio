@@ -3,7 +3,6 @@
 @section('content')
     <div class="global indent">
         <!--content-->
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8 thumb-box4">
@@ -43,15 +42,15 @@
                     </ul>
                     {{--<h2 class="center indent">Archiwum wpisów</h2>--}}
                     {{--<ul class="list1-1">--}}
-                        {{--<li><a href="#">June 2013</a></li>--}}
-                        {{--<li><a href="#">May 2013</a></li>--}}
-                        {{--<li><a href="#">April 2013</a></li>--}}
-                        {{--<li><a href="#">March 2013</a></li>--}}
-                        {{--<li><a href="#">February 2013</a></li>--}}
-                        {{--<li><a href="#">January 2013</a></li>--}}
-                        {{--<li><a href="#">December 2012</a></li>--}}
-                        {{--<li><a href="#">November 2012</a></li>--}}
-                        {{--<li><a href="#">October 2012</a></li>--}}
+                    {{--<li><a href="#">June 2013</a></li>--}}
+                    {{--<li><a href="#">May 2013</a></li>--}}
+                    {{--<li><a href="#">April 2013</a></li>--}}
+                    {{--<li><a href="#">March 2013</a></li>--}}
+                    {{--<li><a href="#">February 2013</a></li>--}}
+                    {{--<li><a href="#">January 2013</a></li>--}}
+                    {{--<li><a href="#">December 2012</a></li>--}}
+                    {{--<li><a href="#">November 2012</a></li>--}}
+                    {{--<li><a href="#">October 2012</a></li>--}}
                     {{--</ul>--}}
                 </div>
 
@@ -59,5 +58,4 @@
 
         </div>
     </div>
-
-    @yield('footer')
+@endsection

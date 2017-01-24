@@ -3,7 +3,7 @@
 function pol_month($posts)
 {
     $month = $posts['created_at'];
-    $month_sub = substr($month,5,2);
+    $month_sub = substr($month, 5, 2);
 
     $months_arr = array('01' => 'STY', '02' => 'LUTY', '03' => 'MAR',
         '04' => 'KWI', '05' => 'MAJ', '06' => 'CZE',
@@ -18,13 +18,13 @@ function pol_month($posts)
 function pol_day($posts)
 {
     $month = $posts['created_at'];
-    $new_day = substr($month,8,2);
+    $new_day = substr($month, 8, 2);
     return $new_day;
 }
 
 function year($posts)
 {
-    return $year = substr($posts['created_at'],0,4);
+    return $year = substr($posts['created_at'], 0, 4);
 }
 
 function post_truncate($posts)
@@ -34,6 +34,7 @@ function post_truncate($posts)
         return $truncated = substr($data, 0, strrpos(substr($data, 0, 200), ' '));
     }
 }
+
 function category_name($posts, $categories)
 {
 
@@ -48,7 +49,7 @@ function category_name($posts, $categories)
 
 function iframe_search($posts)
 {
-    $data  = ($posts[0]['body']);
+    $data = ($posts[0]['body']);
     preg_match('#(?:<iframe[^>]*)(?:(?:/>)|(?:>.*?</iframe>))#i', $data, $matches);
 
 //    var_dump($matches);

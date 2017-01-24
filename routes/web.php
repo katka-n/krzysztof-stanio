@@ -11,16 +11,17 @@
 |
 */
 
-// zapisanie adresu e-mail do bazy maailingowej
-Route::post('save', [
-    'uses' => 'NewsletterController@store',
-    'as' => 'email.save',
-]);
 
 //index
 Route::get('/', [
     'uses' => 'PostController@index',
     'as' => 'index',
+]);
+
+// zapisanie adresu e-mail z index do bazy mailingowej
+Route::post('save', [
+    'uses' => 'NewsletterController@store',
+    'as' => 'email.save',
 ]);
 
 //blog
@@ -40,15 +41,14 @@ Route::get('absolwenci', [
     'as' => 'absolwenci',
 ]);
 
-Route::get('graduates/{id}', [
+Route::get('absolwent/{id}', [
     'uses' => 'GraduatesController@single_graduate',
-    'as' => 'graduates',
+    'as' => 'absolwent',
 ]);
 
-//kirs
-Route::get('kurs', function()
-{
-    return view('index-3');
+//kurs
+Route::get('kurs', function () {
+    return view('szkolenia');
 });
 
 //formularz kontaktowy
