@@ -24,7 +24,7 @@
                                 <div class="badge">
                                     {!! pol_day($posts[$i]) !!}
                                     <span>{!! pol_month($posts[$i]) !!}</span>
-                                    <strong>{!! year($posts[$i]) !!}</strong>
+                                    <strong>6 <img src="img/page1_icon4.png" alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
                                     <p>{{$posts[$i]['excerpt']}}</p>
@@ -117,5 +117,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection
