@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('css/contact-form.css') }}"/>
+<link rel="stylesheet" href="{{ URL::asset('search/search.css') }}"/>
 
 <!--JS-->
 <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
@@ -92,6 +93,8 @@
     <script type="text/javascript" src="{{ URL::asset('js/tm-scripts.js') }}"></script>
 </body>
 </html>
+
+
 @stop
 
 @yield('content')
