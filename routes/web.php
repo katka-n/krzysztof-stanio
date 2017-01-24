@@ -54,12 +54,7 @@ Route::get('kurs', function () {
 //formularz kontaktowy
 Route::get('kontakt', [
     'as' => 'contact',
-    'uses' => 'ContactFormController@get',
-]);
-
-Route::post('kontakt', [
-    'as' => 'contact',
-    'uses' => 'ContactFormController@send',
+    'uses' => 'ContactFormController@index',
 ]);
 
 // routingi Voyagera

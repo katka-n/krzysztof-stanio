@@ -2,7 +2,6 @@
 
 @section('content')
 
-<!--content-->
 <div class="global indent">
     <div class="container">
         <div class="row">
@@ -17,6 +16,8 @@
                     <input type="text" name="s" value="" onfocus="if (this.value == '') {this.value=''}" onblur="if (this.value == '') {this.value=''}">
                     <a href="#" onClick="document.getElementById('search-404').submit()" class="btn-default btn1">wyślij</a>
                 </form>
+                <h4>Wyniki wyszukiwania:</h4>
+                <div id="search-results"></div>
             </div>
         </div>
     </div>
