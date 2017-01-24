@@ -7,7 +7,7 @@
 			,bl,vl
 			
 		o=$.extend({
-			ownerEmail:'#'
+			ownerEmail:'katarzynan@gmail.com'
 			,mailHandlerURL:'bat/MailHandler-sub.php'
 		},o)
 		
@@ -105,7 +105,7 @@
 })(jQuery)
 $(window).load(function(){
 	$('#newsletter').sForm({			
-		ownerEmail:'#'
+		ownerEmail:'katarzynan@gmail.com'
 		,sitename:'sitename.link'
 	})
 })

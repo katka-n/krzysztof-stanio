@@ -13,7 +13,7 @@ class ContactFormController extends Controller
 
     public function get()
     {
-        return view('index-4');
+        return view('kontakt');
     }
 
 

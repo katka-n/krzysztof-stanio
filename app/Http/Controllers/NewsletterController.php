@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
+    //zapisywanie adresu e-mail do bazy mailing
     public function store(Request $request)
     {
 
@@ -16,7 +17,7 @@ class NewsletterController extends Controller
         $email->email = $request->get('email');
         $email->save();
 
-        return redirect('/'. '#newsletter')->with('message', 'Twój adres został zapisany');
+        return redirect('/' . '#newsletter')->with('message', 'Twój adres został zapisany');
 
     }
 }

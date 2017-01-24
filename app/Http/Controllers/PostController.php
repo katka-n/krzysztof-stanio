@@ -15,7 +15,7 @@ use Illuminate\Support\Collection;
 class PostController extends Controller
 {
 
-    //wyswietlanie artykulow z bloga na stronie glownej
+    //wyswietlanie 3 artykulow z bloga na stronie glownej (index)
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->take(3)->get();
@@ -44,17 +44,17 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->paginate(2);
         $categories = Categories::all();
-        return view('index-2', ['posts' => $posts, 'categories' => $categories]);
+        return view('blog', ['posts' => $posts, 'categories' => $categories]);
     }
 
-    //wyswietlanie po kategorii lub po id
+    //wyswietlanie notek po kategorii lub po id
     public function entry($name)
     {
         if (is_numeric($name)) {
             $posts = Post::where('id', $name)->first();
             $categories = Categories::all();
 
-            return view('index-6', ['posts' => $posts, 'categories' => $categories]);
+            return view('blog_notka', ['posts' => $posts, 'categories' => $categories]);
 
         } else {
 
@@ -66,7 +66,7 @@ class PostController extends Controller
             $posts = json_decode($post, true);
 
 
-            return view('index-5', ['posts' => $posts, 'categories' => $categories ]);
+            return view('blog_kategoria', ['posts' => $posts, 'categories' => $categories]);
         }
 
 
