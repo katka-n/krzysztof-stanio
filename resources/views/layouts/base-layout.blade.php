@@ -68,11 +68,11 @@
                 <ul class="nav sf-menu clearfix">
                     <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('/')}}">start</a></li>
-                    <li class="{{ Request::is('blog') ? 'active sub-menu' : '' }}">
+                    <li class="{{ Request::is('blog') || Request::is('blog/*') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('blog')}}">blog</a></li>
                     <li class="{{ Request::is('kurs') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kurs')}}">kurs</a></li>
-                    <li class="{{ Request::is('absolwenci') ? 'active sub-menu' : '' }}">
+                    <li class="{{ Request::is('absolwenci') || Request::is('absolwent/*') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
                     <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kontakt')}}">kontakt</a></li>
@@ -80,6 +80,7 @@
             </nav>
         </div>
     </div>
+
 </header>
 
 @section('footer')
