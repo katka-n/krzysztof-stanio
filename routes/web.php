@@ -41,10 +41,21 @@ Route::get('/blog', [
     'as' => 'blog',
 ]);
 
-Route::get('blog/{name}', [
-    'uses' => 'PostController@entry',
+Route::get('blog/notka/{id}', [
+    'uses' => 'PostController@byEntry',
     'as' => 'posts',
 ]);
+
+Route::get('blog/kategoria/{name}', [
+    'uses' => 'PostController@byCategory',
+    'as' => 'posts',
+]);
+
+Route::get('blog/archiwum/{year}/{day}', [
+    'uses' => 'PostController@byDate',
+    'as' => 'posts',
+]);
+
 
 //absolwenci
 Route::get('absolwenci', [
