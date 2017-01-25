@@ -24,16 +24,38 @@ Route::post('save', [
     'as' => 'email.save',
 ]);
 
+// dodawanie komentarzy widok
+Route::get('/blog/addcomments/{id}', [
+    'uses' => 'PostController@addcomments',
+    'as' => 'blog.addcomments',
+]);
+
+Route::any('/blog/savecomments/{id}', [
+    'uses' => 'PostController@store',
+    'as' => 'blog.savecomments',
+]);
+
 //blog
 Route::get('/blog', [
     'uses' => 'PostController@blog_index',
     'as' => 'blog',
 ]);
 
-Route::get('blog/{name}', [
-    'uses' => 'PostController@entry',
+Route::get('blog/notka/{id}', [
+    'uses' => 'PostController@byEntry',
     'as' => 'posts',
 ]);
+
+Route::get('blog/kategoria/{name}', [
+    'uses' => 'PostController@byCategory',
+    'as' => 'posts',
+]);
+
+Route::get('blog/archiwum/{year}/{day}', [
+    'uses' => 'PostController@byDate',
+    'as' => 'posts',
+]);
+
 
 //absolwenci
 Route::get('absolwenci', [
