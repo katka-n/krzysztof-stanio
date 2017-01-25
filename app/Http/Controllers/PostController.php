@@ -55,19 +55,19 @@ class PostController extends Controller
             ->orderBy('year', 'desc')
             ->orderBy('month', 'desc')
             ->get();
-
         $postsByDates = json_decode($postsByDates, true);
 
-        return view('blog', ['posts' => $posts, 'categories' => $categories, 'postsByDates' => $postsByDates]);
+
+        return view('blog', ['posts' => $posts, 'categories' => $categories,
+            'postsByDates' => $postsByDates]);
     }
 
-    //wyswietlanie notek po kategorii, id lub dacie
-    public function byEntry($name)
+    //wyswietlanie notek po id
+    public function byEntry($id)
     {
-
-        $posts = Post::where('id', $name)->first();
+        $posts = Post::where('id', $id)->first();
         $categories = Categories::all();
-        $comments = Comments::where('posts_id', $name)->get();
+        $comments = Comments::where('posts_id', $id)->get();
 
         $postsByDates = DB::table('posts')
             ->select(DB::raw('count(id) as `data`'))
@@ -79,9 +79,16 @@ class PostController extends Controller
             ->get();
         $postsByDates = json_decode($postsByDates, true);
 
-        return view('blog_notka', ['posts' => $posts, 'categories' => $categories, 'comments' => $comments, 'postsByDates' => $postsByDates]);
+        $commentsNumber = DB::table('comments')
+            ->where('posts_id', '=', $id)
+            ->count();
+
+        return view('blog_notka', ['posts' => $posts, 'categories' => $categories,
+            'comments' => $comments, 'postsByDates' => $postsByDates,
+            'commentsNumber' => $commentsNumber]);
     }
 
+    //wyswietlanie notek po kategorii
     public function byCategory($name)
     {
         $categories = Categories::all();
@@ -105,7 +112,7 @@ class PostController extends Controller
         return view('blog_kategoria', ['posts' => $posts, 'categories' => $categories, 'postsByDates' => $postsByDates]);
     }
 
-
+    //wyswietlanie notek po dacie
     public function byDate($year, $month)
     {
         $posts = Post::whereYear('created_at', '=', $year)

@@ -13,11 +13,11 @@
                                 <div class="badge">
                                     {!! polDay($posts) !!}
                                     <span>{!! polMonth($posts) !!}</span>
-                                        <strong>6 <img src="/img/page2_icon1.png" alt=""></strong>
+                                        <strong>{!! commentsNumber($posts) !!}<img src="/img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
 
-                            <a href="/blog/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
+                            <a href="/blog/notka/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
                             <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {!! categoryName($posts, $categories) !!}
                                 <br></p>
                             <div class="thumbnail">
@@ -48,6 +48,8 @@
                     </ul>
                 </div>
             </div>
+
+            <?php echo ($comments); ?>
 
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>

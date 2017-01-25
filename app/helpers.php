@@ -71,3 +71,11 @@ function fullMonth($post)
 
     return $fullMonth;
 }
+
+function commentsNumber($post) {
+    $commentsNumber = DB::table('comments')
+        ->where('posts_id', '=', $post['id'])
+        ->count();
+    return $commentsNumber;
+
+}

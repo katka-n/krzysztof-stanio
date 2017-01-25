@@ -14,7 +14,7 @@
                                     {!! polDay($post) !!}
                                     <span>{!! polMonth($post) !!}</span>
                                     <div class="badge_small">
-                                        <strong>6 <img src="/img/page2_icon1.png" alt=""></strong>
+                                        <strong>{!! commentsNumber($post)!!}<img src="/img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
                                 <a href="/blog/notka/{{$post['id']}}" class="lnk">{{$post['title']}}</a>

@@ -24,7 +24,7 @@
                                 <div class="badge">
                                     {!! polDay($posts[$i]) !!}
                                     <span>{!! polMonth($posts[$i]) !!}</span>
-                                    <strong>6 <img src="img/page1_icon4.png" alt=""></strong>
+                                    <strong>{!! commentsNumber($posts[$i]) !!}<img src="img/page1_icon4.png" alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
                                     <p>{{$posts[$i]['excerpt']}}</p>
