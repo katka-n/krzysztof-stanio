@@ -24,6 +24,9 @@ Route::post('save', [
     'as' => 'email.save',
 ]);
 
+Route::post('mailing', 'NewsletterController@store');
+
+
 // dodawanie komentarzy widok
 Route::get('/blog/addcomments/{id}', [
     'uses' => 'PostController@addcomments',

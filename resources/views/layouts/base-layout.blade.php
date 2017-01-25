@@ -19,7 +19,9 @@
 <link rel="stylesheet" href="{{ URL::asset('css/contact-form.css') }}"/>
 
 <!--JS-->
+<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/formDialog.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/superfish.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery.easing.1.3.js') }}"></script>
@@ -32,7 +34,6 @@
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('search/search.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -41,6 +42,7 @@
         }
     });
 </script>
+
 
 <!--[if lt IE 9]>
 <div style='text-align:center'><a
