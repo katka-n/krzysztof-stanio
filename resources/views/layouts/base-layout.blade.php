@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('css/contact-form.css') }}"/>
+<link rel="stylesheet" href="{{ URL::asset('search/search.css') }}"/>
 
 <!--JS-->
 <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
@@ -32,7 +33,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('js/wow/device.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('search/search.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -67,11 +68,11 @@
                 <ul class="nav sf-menu clearfix">
                     <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('/')}}">start</a></li>
-                    <li class="{{ Request::is('blog') ? 'active sub-menu' : '' }}">
+                    <li class="{{ Request::is('blog') || Request::is('blog/*') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('blog')}}">blog</a></li>
                     <li class="{{ Request::is('kurs') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kurs')}}">kurs</a></li>
-                    <li class="{{ Request::is('absolwenci') ? 'active sub-menu' : '' }}">
+                    <li class="{{ Request::is('absolwenci') || Request::is('absolwent/*') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
                     <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kontakt')}}">kontakt</a></li>
@@ -79,6 +80,7 @@
             </nav>
         </div>
     </div>
+
 </header>
 
 @section('footer')
@@ -92,6 +94,8 @@
     <script type="text/javascript" src="{{ URL::asset('js/tm-scripts.js') }}"></script>
 </body>
 </html>
+
+
 @stop
 
 @yield('content')

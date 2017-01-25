@@ -24,7 +24,7 @@
                                 <div class="badge">
                                     {!! pol_day($posts[$i]) !!}
                                     <span>{!! pol_month($posts[$i]) !!}</span>
-                                    <strong>{!! year($posts[$i]) !!}</strong>
+                                    <strong>6 <img src="img/page1_icon4.png" alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
                                     <p>{{$posts[$i]['excerpt']}}</p>
@@ -52,7 +52,7 @@
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="thumb-pad2 wow fadeInRight">
                                 <div class="thumbnail">
-                                    <img src="{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
+                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
                                         <p>{{$graduates[$i]['description']}}</p>
@@ -117,4 +117,6 @@
             </div>
         </div>
     </div>
+
+
 @endsection

@@ -13,12 +13,12 @@
                                 <div class="badge">
                                     {!! pol_day($posts) !!}
                                     <span>{!! pol_month($posts) !!}</span>
-                                    <strong>{!! year($posts) !!}</strong>
+                                        <strong>6 <img src="/img/page2_icon1.png" alt=""></strong>
+                                    </div>
                                 </div>
-                            </div>
 
                             <a href="/blog/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
-                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {{$posts['category_id']}}
+                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {!! category_name($posts, $categories) !!}
                                 <br></p>
                             <div class="thumbnail">
                                 <div class="caption">
