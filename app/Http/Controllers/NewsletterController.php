@@ -20,4 +20,5 @@ class NewsletterController extends Controller
         return redirect('/' . '#newsletter')->with('message', 'Twój adres został zapisany');
 
     }
+
 }

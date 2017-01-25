@@ -1585,3 +1585,82 @@ footer span {
 	height:50px;
 	width:100%;
 }
+
+.dialogForm {
+	position: fixed;
+	font: bold 12px/20px 'Oswald';
+	top: 7%;
+	left: 50%;
+	margin-left: -350px;
+	z-index: 1;
+	width: 700px;
+	height: 242px;
+	background: rgba(66, 59, 66, 0.9);
+	border-radius: 3px;
+	animation-name: slideLeft;
+	animation-duration: 1s;
+}
+
+@keyframes slideLeft {
+	from {left: -100%}
+	to {left: 50%}
+}
+
+.return-dialog {
+	animation-name: hideDialog;
+	animation-duration: 1s;
+}
+
+@keyframes hideDialog {
+	from {left: 50%}
+	to {left: -100%}
+}
+
+.elem {
+	margin: 0 auto;
+	padding-top: 20px;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+.elem h2 {
+	margin: 0px;
+	color: #f5b35f;
+	font-size: 21px;
+}
+.elem h2 span {
+	color: #258faf;
+}
+.elem label {
+	position: absolute;
+	background: #f5b35f;
+	display: inline-block;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	overflow: hidden;
+	padding: 10px 15px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.elem input.email {
+	display: inline-block;
+	width: 415px;
+	height: 40px;
+	padding: 10px 0px 10px 14px;
+	font-weight: 400;
+	color: #f5b35f;
+	background: #efefef;
+	border: 0;
+	border-radius: 3px;
+	text-indent: 70px;
+}
+.elem input.send-email {
+	display: inline-block;
+	width: 415px;
+	height: 44px;
+	padding: 10px 0px 10px 0px;
+	font-weight: 800;
+	color: #000000;
+	background: #f5b35f;
+	border: 0;
+	border-radius: 3px;
+}
