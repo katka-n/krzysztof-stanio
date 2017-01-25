@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCommentRequest;
 use App\Post;
 use App\Graduates;
 use App\Categories;
+use App\Comments;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Session;
 
 
 class PostController extends Controller
@@ -53,8 +56,9 @@ class PostController extends Controller
         if (is_numeric($name)) {
             $posts = Post::where('id', $name)->first();
             $categories = Categories::all();
+            $comments = Comments::where('posts_id',$name)->get();
 
-            return view('blog_notka', ['posts' => $posts, 'categories' => $categories]);
+            return view('blog_notka', ['posts' => $posts, 'categories' => $categories, 'comments' => $comments]);
 
         } else {
 
@@ -68,6 +72,32 @@ class PostController extends Controller
 
             return view('blog_kategoria', ['posts' => $posts, 'categories' => $categories]);
         }
+
+
+    }
+
+    public function addcomments($id) {
+
+
+        $categories = Categories::all();
+        return view('addcomments',compact('categories','id'));
+
+    }
+
+    public function store(CreateCommentRequest $commentRequest){
+
+
+        $id = $commentRequest->input('post_id');
+        $comment = new Comments();
+        $comment->comment = $commentRequest->input('comment');
+        $comment->nick = $commentRequest->input('nick');
+        $comment->posts_id = $commentRequest->input('post_id');
+
+        $comment ->save();
+
+        Session::flash('message', 'Komentarz czeka na publikację.');
+
+        return redirect()->route('posts',compact('id'));
 
 
     }

@@ -24,6 +24,17 @@ Route::post('save', [
     'as' => 'email.save',
 ]);
 
+// dodawanie komentarzy widok
+Route::get('/blog/addcomments/{id}', [
+    'uses' => 'PostController@addcomments',
+    'as' => 'blog.addcomments',
+]);
+
+Route::any('/blog/savecomments/{id}', [
+    'uses' => 'PostController@store',
+    'as' => 'blog.savecomments',
+]);
+
 //blog
 Route::get('/blog', [
     'uses' => 'PostController@blog_index',
