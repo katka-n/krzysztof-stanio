@@ -7,7 +7,6 @@
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
-
         </div>
     </div>
 
@@ -38,9 +37,8 @@
                     <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie
                         wpisy</a>
             </div>
-            @endfor
-
         </div>
+            @endfor
 
         <div class="thumb-box2">
             <div class="container">
@@ -66,8 +64,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="thumb-box1 center">
             <div class="container">
                 <h2 class="center">Najnowsze wpisy</h2>
@@ -89,7 +85,6 @@
                 @endforeach
             </div>
         </div>
-
         <div class="thumb-box3">
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>
