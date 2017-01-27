@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}co" type="image/x-icon"/>
-    <meta name="description" content="Your description">
+    <meta name="description" content="Od zera do webdeva">
     <meta name="keywords" content="Your keywords">
     <meta name="dyktek" content="Krzysztof Stanio">
 </head>
@@ -34,6 +34,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -63,7 +64,7 @@
 <header class="clearfix">
     <div class="container">
         <div class="box clearfix">
-            <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
+        <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
                             src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
@@ -81,7 +82,6 @@
             </nav>
         </div>
     </div>
-
 </header>
 
 @section('footer')
