@@ -1,5 +1,8 @@
 @extends('layouts.base-layout')
 
+@section('pageTitle', 'Absolwenci')
+
+
 @section('content')
     <!--header-->
     <div class="global indent">

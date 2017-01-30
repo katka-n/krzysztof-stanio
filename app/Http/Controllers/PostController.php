@@ -83,9 +83,14 @@ class PostController extends Controller
             ->where('posts_id', '=', $id)
             ->count();
 
+        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
+
+
         return view('blog_notka', ['posts' => $posts, 'categories' => $categories,
             'comments' => $comments, 'postsByDates' => $postsByDates,
-            'commentsNumber' => $commentsNumber]);
+            'commentsNumber' => $commentsNumber,
+            'fiveLastPosts' => $fiveLastPosts,
+        ]);
     }
 
     //wyswietlanie notek po kategorii
@@ -109,7 +114,14 @@ class PostController extends Controller
             ->get();
         $postsByDates = json_decode($postsByDates, true);
 
-        return view('blog_kategoria', ['posts' => $posts, 'categories' => $categories, 'postsByDates' => $postsByDates]);
+        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
+
+
+        return view('blog_kategoria', ['posts' => $posts,
+            'categories' => $categories,
+            'postsByDates' => $postsByDates,
+            'fiveLastPosts' => $fiveLastPosts,
+        ]);
     }
 
     //wyswietlanie notek po dacie
@@ -132,7 +144,14 @@ class PostController extends Controller
             ->get();
         $postsByDates = json_decode($postsByDates, true);
 
-        return view('blog_archiwum', ['posts' => $posts, 'categories' => $categories, 'postsByDates' => $postsByDates]);
+        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
+
+
+        return view('blog_archiwum', ['posts' => $posts,
+            'categories' => $categories,
+            'postsByDates' => $postsByDates,
+            'fiveLastPosts' => $fiveLastPosts,
+        ]);
     }
 
     public function addcomments($id)

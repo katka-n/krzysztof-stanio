@@ -1,5 +1,7 @@
 @extends('layouts.base-layout')
 
+@section('pageTitle', 'Start')
+
 @section('content')
 
 

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Od zera do WebDeva</title>
+    <title>@yield('pageTitle') - od zera do WebDeva</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}co" type="image/x-icon"/>
-    <meta name="description" content="Od zera do webdeva">
-    <meta name="keywords" content="Your keywords">
+    <meta name="description" content="Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!">
+    <meta name="keywords" content="szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne,
+jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper ">
     <meta name="dyktek" content="Krzysztof Stanio">
 </head>
 
