@@ -26,9 +26,7 @@ function getCookie(name) {
 
 var myCookie = getCookie("okienko");
 
-// tak ma być po naprawie POSTa maila do bazy
-// if(activeWindow === "/" && myCookie === null || activeWindow === "/kurs" && myCookie === null ){
-if (activeWindow === "/" || activeWindow === "/kurs") {
+if(activeWindow === "/" && myCookie === null || activeWindow === "/kurs" && myCookie === null ){
     $(document).ready(function () {
 
         var isDialog = false;
@@ -41,9 +39,10 @@ if (activeWindow === "/" || activeWindow === "/kurs") {
 
         function dialogDestroy() {
             dialogForm.addClass('return-dialog');
-            window.setTimeout(function () {
-                dialogForm.remove();
-            }, 1000);
+            dialogForm.bind('oanimationend animationend webkitAnimationEnd', function() {
+                dialogForm.hide();
+                createCookie('okienko', 1, 14);
+            });
         }
 
         function sendMail() {
@@ -54,63 +53,39 @@ if (activeWindow === "/" || activeWindow === "/kurs") {
                 alert('Podany adres e-mail jest nieprawidłowy');
 
             } else {
-
-                console.info(111111);
-                // var token = "{{ csrf_token() }}";
-                console.log(input.val());
-                $.post( "/mailing", {
-                    'email' : input.val()
+                var token = dialogForm.find('#csrf-token').val();
+                $.ajax({
+                    type: "POST",
+                    url: "/mailing",
+                    data: {
+                        'email': input.val(),
+                        '_token': token
+                    }
                 });
-
-                console.info(12324242143);
-
-                // console.info(111111);
-                // var token = dialogForm.find('#csrf-token').val();
-                // $.ajax({
-                //     type: "POST",
-                //     url: "/mailing",
-                //     data: {
-                //         'email': input.val(),
-                //         '_token': token
-                //     }
-                //
-                // })
-                // console.log(input.val());
+                dialogDestroy();
             }
         }
+        var dialogForm = $('.dialogForm');
+
+        dialogForm.find('#send-email').click(function () {
+            sendMail();
+        });
+
+        dialogForm.find('#email').keypress(function (event) {
+            if (event.keyCode == 13) {
+                sendMail();
+            }
+        });
 
         $('body').mouseleave(function () {
             if (isDialog) {
                 return;
             }
-            var dialogHtml = '';
-            dialogHtml += '<div class="dialogForm">';
-            dialogHtml += '<div class="elem">';
-            // dialogHtml += '<meta name="csrf-token" content="{{ csrf_token() }}" />';
-            dialogHtml += '<h2>Odchodzisz? Zostaw swój e-mail <span><br> otrzymasz powiadomienia<br>o nowych wpisach i rabatach na kurs</span></h2>';
-            dialogHtml += '</div>';
-            dialogHtml += '<div class="elem">';
-            dialogHtml += '<label for="email">Email: </label>';
-            dialogHtml += '<input class="email" id="email" type="email" placeholder="Podaj swój e-mail" />';
-            dialogHtml += '</div>';
-            dialogHtml += '<div class="elem">';
-            dialogHtml += '<input class="send-email" id="send-email" type="button" value="Wyślij" />';
-            dialogHtml += '</div>';
-            dialogHtml += '</div>';
 
-            if (!$('.dialogForm').length) {
-                dialogForm = $('body').append(dialogHtml).find('.dialogForm');
-                isDialog = true;
-            }
-            dialogForm.find('#send-email').click(function () {
-                sendMail();
-            });
+            dialogForm.show();
+            dialogForm.addClass('pop-dialog');
+            isDialog = true;
 
-            dialogForm.find('#email').keypress(function (event) {
-                if (event.keyCode == 13) {
-                    sendMail();
-                }
-            });
 
         });
 
@@ -137,10 +112,5 @@ if (activeWindow === "/" || activeWindow === "/kurs") {
             document.cookie = name + "=" + value + expires + "; path=/";
         }
 
-        createCookie('okienko', 1, 60);
     });
-
-
-} else {
-    console.log('');
 }

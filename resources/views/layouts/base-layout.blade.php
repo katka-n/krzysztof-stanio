@@ -91,6 +91,23 @@
             <p class="foo_address">Ketlinga 1<br>32-020 Kraków</p>
         </div>
     </footer>
+
+
+    <div class="dialogForm" style="display:none">
+        <input type="hidden" id="csrf-token" name="_token" value="{{ csrf_token() }}">
+        <div class="elem">
+            <h2>Odchodzisz? Zostaw swój e-mail <span><br> otrzymasz powiadomienia<br>o nowych wpisach i rabatach na kurs</span>
+            </h2>
+        </div>
+        <div class="elem">
+            <label for="email">Email: </label>
+            <input class="email" id="email" type="email" placeholder="Podaj swój e-mail"/>
+        </div>
+        <div class="elem">
+            <input class="send-email" id="send-email" type="button" value="Wyślij"/>
+        </div>
+    </div>
+
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/tm-scripts.js') }}"></script>
 </body>
