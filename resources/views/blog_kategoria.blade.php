@@ -1,5 +1,8 @@
 @extends('layouts.base-layout')
 
+@section('pageTitle', 'Blog - przeglądanie po kategorii')
+
+
 @section('content')
     <div class="global indent">
         <!--content-->
@@ -37,8 +40,14 @@
                             <li><a href="/blog/kategoria/{{$category['name']}}">{{$category['name']}}</a></li>
                         @endforeach
                     </ul>
+                    <h2 class="center indent">Najnowsze wpisy</h2>
+                    <ul class="list1-1 indent">
+                        @foreach($fiveLastPosts as $post)
+                            <li><a href="/blog/notka/{{$post['id']}}">{{$post['title']}}</a></li>
+                        @endforeach
+                    </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
-                    <ul class="list1-1">
+                    <ul class="list1-1 indent">
                         @foreach($postsByDates as $post)
                             <li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>
                         @endforeach

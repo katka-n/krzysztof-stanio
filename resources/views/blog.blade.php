@@ -1,5 +1,7 @@
 @extends('layouts.base-layout')
 
+@section('pageTitle', 'Blog')
+
 @section('content')
     <div class="global indent">
         <!--content-->
