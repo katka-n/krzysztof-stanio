@@ -1596,6 +1596,9 @@ footer span {
 	height: 242px;
 	background: rgba(200, 71, 79, 0.9);
 	border-radius: 3px;
+}
+
+.pop-dialog {
 	animation-name: slideLeft;
 	animation-duration: 1s;
 }
