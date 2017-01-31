@@ -1585,3 +1585,56 @@ footer span {
 	height:50px;
 	width:100%;
 }
+
+.dropdown-content {
+	display:none;
+
+}
+
+.dropdown{
+
+	color: #434343;
+	text-align: left;
+
+}
+
+.container{
+	width: 900px;
+
+}
+
+.container2{
+	float: left;
+	width: 10%;
+}
+
+.container3{
+	width:90%;
+	float: left;
+	font-style:inherit;
+	font-size: 17px;
+	color: #1a1a1a;
+}
+
+.container4{
+	float: left;
+	font-size: 17px;
+	height: 50px;
+	width: 100px;
+	border-radius: 6px;
+	word-wrap: break-word;
+	color:#555a78;
+}
+
+.answer{
+	padding-left: 100px;
+
+}
+
+.comments{
+	height: auto;
+	font-size: 17px;
+	line-height: 29px;
+}
+
+

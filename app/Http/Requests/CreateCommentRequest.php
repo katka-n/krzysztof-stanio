@@ -26,7 +26,8 @@ class CreateCommentRequest extends FormRequest
         return [
 
             'comment' => 'required',
-            'nick' => 'required',
+            'nick' => 'required|max:16',
+
 
 
         ];
@@ -37,6 +38,8 @@ class CreateCommentRequest extends FormRequest
         return [
             'comment.required' => 'Pole > Twoj komentarz < nie powinno być puste',
             'nick.required' => 'Pole > Twój nick < nie powinno być puste',
+            'nick.max' => 'Twój Nick może posiadać max. 16 znaków',
+
 
         ];
     }

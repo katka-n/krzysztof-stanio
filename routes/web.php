@@ -30,7 +30,7 @@ Route::get('/blog/addcomments/{id}', [
     'as' => 'blog.addcomments',
 ]);
 
-Route::any('/blog/savecomments/{id}', [
+Route::post('/blog/savecomments/{id}', [
     'uses' => 'PostController@store',
     'as' => 'blog.savecomments',
 ]);

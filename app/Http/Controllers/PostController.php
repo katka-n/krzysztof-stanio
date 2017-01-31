@@ -8,6 +8,7 @@ use App\Graduates;
 use App\Categories;
 use App\Comments;
 
+use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,11 +55,18 @@ class PostController extends Controller
     public function entry($name)
     {
         if (is_numeric($name)) {
+
+
+            Carbon::setLocale('pl');
+
+
             $posts = Post::where('id', $name)->first();
             $categories = Categories::all();
-            $comments = Comments::where('posts_id',$name)->get();
+            $comments = Comments::where('posts_id',$name)->where('parent','=',0)->get();
+            $anscomments = Comments::where('parent','>',0)->where('posts_id',$name)->get();
 
-            return view('blog_notka', ['posts' => $posts, 'categories' => $categories, 'comments' => $comments]);
+
+            return view('blog_notka', ['anscomments'=>$anscomments,'posts'=>$posts, 'categories'=>$categories,'comments' => $comments]);
 
         } else {
 
@@ -76,28 +84,55 @@ class PostController extends Controller
 
     }
 
-    public function addcomments($id) {
 
 
-        $categories = Categories::all();
-        return view('addcomments',compact('categories','id'));
+    public function store(CreateCommentRequest $commentRequest, $posts){
 
-    }
-
-    public function store(CreateCommentRequest $commentRequest){
+            $comment = $commentRequest->input('comment_id');
 
 
-        $id = $commentRequest->input('post_id');
-        $comment = new Comments();
-        $comment->comment = $commentRequest->input('comment');
-        $comment->nick = $commentRequest->input('nick');
-        $comment->posts_id = $commentRequest->input('post_id');
+        if(is_numeric($comment)){
 
-        $comment ->save();
+            $id = $commentRequest->input('post_id');
+            $anscomment = new Comments();
+            $anscomment->comment = $commentRequest->input('comment');
+            $anscomment->nick = $commentRequest->input('nick');
+            $anscomment->posts_id = $posts;
+            $anscomment->parent = $commentRequest->input('comment_id');
+            $anscomment->save();
 
-        Session::flash('message', 'Komentarz czeka na publikację.');
+            Session::flash('message', 'Komentarz czeka na publikację.');
 
-        return redirect()->route('posts',compact('id'));
+            return redirect()->route('posts', compact('id'));
+
+        } else {
+            $id = $commentRequest->input('post_id');
+            $comment = new Comments();
+            $comment->comment = $commentRequest->input('comment');
+            $comment->nick = $commentRequest->input('nick');
+            $comment->posts_id = $commentRequest->input('post_id');
+            $comment->parent = 0;
+
+            $comment->save();
+
+            Session::flash('message', 'Komentarz czeka na publikację.');
+
+            return redirect()->route('posts', compact('id'));
+
+        }
+
+//        $id = $commentRequest->input('post_id');
+//        $anscomment = new Comments();
+//        $anscomment->comment = $commentRequest->input('comment');
+//        $anscomment->nick = $commentRequest->input('nick');
+//        $anscomment->posts_id = $commentRequest->input('posts_id');
+//        $anscomment->parent = intval($commentId);
+//        $anscomment->save();
+//
+//        Session::flash('message', 'Komentarz czeka na publikację.');
+//
+//        return redirect()->route('posts', compact('id'));
+
 
 
     }
