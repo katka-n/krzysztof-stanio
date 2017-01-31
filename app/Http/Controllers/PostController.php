@@ -24,12 +24,14 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->take(3)->get();
 
+
         $all_graduates = DB::table('graduates')->pluck('id');
         $arr = array();
         for ($i = 1; $i <= count($all_graduates); $i++) {
             $arr[$i - 1] = $all_graduates[$i - 1];
         }
         shuffle($arr);
+
         $graduates = [];
         foreach ($arr as $key => $value) {
             $graduate = Graduates::where('id', $value)->first();
@@ -45,136 +47,49 @@ class PostController extends Controller
     public function blog_index()
     {
         $posts = Post::orderBy('id', 'desc')->paginate(2);
-
         $categories = Categories::all();
-
-        $postsByDates = DB::table('posts')
-            ->select(DB::raw('count(id) as `data`'))
-            ->select(DB::raw("DATE_FORMAT(created_at, '%m-%Y') new_date"))
-            ->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
-            ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
-            ->get();
-        $postsByDates = json_decode($postsByDates, true);
-
-
-        return view('blog', ['posts' => $posts, 'categories' => $categories,
-            'postsByDates' => $postsByDates]);
+        return view('blog', ['posts' => $posts, 'categories' => $categories]);
     }
 
-    //wyswietlanie notek po id
-    public function byEntry($id)
+    //wyswietlanie notek po kategorii lub po id
+    public function entry($name)
     {
         if (is_numeric($name)) {
 
 
-            Carbon::setLocale('pl');
+            $time = time();
+            $date = date('Y-m-d');
 
 
             $posts = Post::where('id', $name)->first();
             $categories = Categories::all();
             $comments = Comments::where('posts_id',$name)->where('parent','=',0)->get();
             $anscomments = Comments::where('parent','>',0)->where('posts_id',$name)->get();
-        $posts = Post::where('id', $id)->first();
-        $categories = Categories::all();
-        $comments = Comments::where('posts_id', $id)->get();
 
 
-            return view('blog_notka', ['anscomments'=>$anscomments,'posts'=>$posts, 'categories'=>$categories,'comments' => $comments]);
-        $postsByDates = DB::table('posts')
-            ->select(DB::raw('count(id) as `data`'))
-            ->select(DB::raw("DATE_FORMAT(created_at, '%m-%Y') new_date"))
-            ->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
-            ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
-            ->get();
-        $postsByDates = json_decode($postsByDates, true);
+            return view('blog_notka', ['time'=>$time,'date'=>$date,'anscomments'=>$anscomments,'posts'=>$posts, 'categories'=>$categories,'comments' => $comments]);
 
-        $commentsNumber = DB::table('comments')
-            ->where('posts_id', '=', $id)
-            ->count();
+        } else {
 
-        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
+            $categories = Categories::all();
+            $post = DB::table('categories')
+                ->where('name', '=', $name)
+                ->leftJoin('posts', 'posts.category_id', '=', 'categories.id')
+                ->get();
+            $posts = json_decode($post, true);
 
 
-        return view('blog_notka', ['posts' => $posts, 'categories' => $categories,
-            'comments' => $comments, 'postsByDates' => $postsByDates,
-            'commentsNumber' => $commentsNumber,
-            'fiveLastPosts' => $fiveLastPosts,
-        ]);
-    }
-
-    //wyswietlanie notek po kategorii
-    public function byCategory($name)
-    {
-        $categories = Categories::all();
-
-        $post = DB::table('categories')
-            ->where('name', '=', $name)
-            ->leftJoin('posts', 'posts.category_id', '=', 'categories.id')
-            ->get();
-        $posts = json_decode($post, true);
-
-        $postsByDates = DB::table('posts')
-            ->select(DB::raw('count(id) as `data`'))
-            ->select(DB::raw("DATE_FORMAT(created_at, '%m-%Y') new_date"))
-            ->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
-            ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
-            ->get();
-        $postsByDates = json_decode($postsByDates, true);
-
-        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
+            return view('blog_kategoria', ['posts' => $posts, 'categories' => $categories]);
+        }
 
 
-        return view('blog_kategoria', ['posts' => $posts,
-            'categories' => $categories,
-            'postsByDates' => $postsByDates,
-            'fiveLastPosts' => $fiveLastPosts,
-        ]);
     }
 
 
-    //wyswietlanie notek po dacie
-    public function byDate($year, $month)
-    {
-        $posts = Post::whereYear('created_at', '=', $year)
-            ->whereMonth('created_at', '=', $month)
-            ->orderBy('id', 'desc')
-            ->get();
 
     public function store(CreateCommentRequest $commentRequest, $posts){
-        $categories = Categories::all();
 
-        $postsByDates = DB::table('posts')
-            ->select(DB::raw('count(id) as `data`'))
-            ->select(DB::raw("DATE_FORMAT(created_at, '%m-%Y') new_date"))
-            ->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
-            ->groupBy('year', 'month')
-            ->orderBy('year', 'desc')
-            ->orderBy('month', 'desc')
-            ->get();
-        $postsByDates = json_decode($postsByDates, true);
-
-        $fiveLastPosts = Post::orderBy('id', 'desc')->take(5)->get();
-
-
-        return view('blog_archiwum', ['posts' => $posts,
-            'categories' => $categories,
-            'postsByDates' => $postsByDates,
-            'fiveLastPosts' => $fiveLastPosts,
-        ]);
-    }
-
-    public function addcomments($id)
-    {
-        $categories = Categories::all();
-        return view('addcomments', compact('categories', 'id'));
-
-            $comment = $commentRequest->input('comment_id');
+        $comment = $commentRequest->input('comment_id');
 
 
         if(is_numeric($comment)){
@@ -200,19 +115,10 @@ class PostController extends Controller
             $comment->parent = 0;
 
             $comment->save();
-    public function store(CreateCommentRequest $commentRequest)
-    {
-        $id = $commentRequest->input('post_id');
-        $comment = new Comments();
-        $comment->comment = $commentRequest->input('comment');
-        $comment->nick = $commentRequest->input('nick');
-        $comment->posts_id = $commentRequest->input('post_id');
-        $comment->save();
 
             Session::flash('message', 'Komentarz czeka na publikację.');
 
             return redirect()->route('posts', compact('id'));
-        return redirect()->route('posts', compact('id'));
 
         }
 

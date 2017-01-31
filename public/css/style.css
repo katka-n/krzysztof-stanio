@@ -210,13 +210,13 @@ nav.tm_navbar .sub-menu > ul li {
 	display: block;
 }
 nav.tm_navbar .sub-menu > ul li a {
-	display: block;
 	background: transparent;
 	padding: 0 0 0 44px;
 	margin: 0;
 	float: none;
 	font: 12px/23px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #929292;
+	display: block;
 	text-transform: none;
 	-webkit-transition: all 0.35s;
 	transition: all 0.35s;
@@ -557,6 +557,7 @@ footer span {
 	font-size: 36px;
 	display: block;
 	text-transform: uppercase;
+	margin-top: 7px;
 
 }
 .date-box > div .badge strong {
@@ -1669,56 +1670,3 @@ footer span {
 	border: 0;
 	border-radius: 3px;
 }
-
-.dropdown-content {
-	display:none;
-
-}
-
-.dropdown{
-
-	color: #434343;
-	text-align: left;
-
-}
-
-.container{
-	width: 900px;
-
-}
-
-.container2{
-	float: left;
-	width: 10%;
-}
-
-.container3{
-	width:90%;
-	float: left;
-	font-style:inherit;
-	font-size: 17px;
-	color: #1a1a1a;
-}
-
-.container4{
-	float: left;
-	font-size: 17px;
-	height: 50px;
-	width: 100px;
-	border-radius: 6px;
-	word-wrap: break-word;
-	color:#555a78;
-}
-
-.answer{
-	padding-left: 100px;
-
-}
-
-.comments{
-	height: auto;
-	font-size: 17px;
-	line-height: 29px;
-}
-
-
