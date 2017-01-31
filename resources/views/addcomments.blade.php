@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
     <div class="global indent">
         <!--content-->
 

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Od zera do WebDeva</title>
+    <title>@yield('pageTitle') - od zera do WebDeva</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}co" type="image/x-icon"/>
-    <meta name="description" content="Your description">
-    <meta name="keywords" content="Your keywords">
+    <meta name="description" content="Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!">
+    <meta name="keywords" content="szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne,
+jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper ">
     <meta name="dyktek" content="Krzysztof Stanio">
 </head>
 
@@ -17,10 +18,11 @@
 <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('css/contact-form.css') }}"/>
-<link rel="stylesheet" href="{{ URL::asset('search/search.css') }}"/>
 
 <!--JS-->
+<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/formDialog.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/superfish.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery.easing.1.3.js') }}"></script>
@@ -33,7 +35,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('search/search.js') }}"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -67,6 +69,7 @@
 
 </script>
 
+
 <!--[if lt IE 9]>
 <div style='text-align:center'><a
         href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img
@@ -86,7 +89,7 @@
 <header class="clearfix">
     <div class="container">
         <div class="box clearfix">
-            <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
+        <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
                             src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
@@ -104,7 +107,6 @@
             </nav>
         </div>
     </div>
-
 </header>
 
 @section('footer')
@@ -114,6 +116,23 @@
             <p class="foo_address">Ketlinga 1<br>32-020 Kraków</p>
         </div>
     </footer>
+
+
+    <div class="dialogForm" style="display:none">
+        <input type="hidden" id="csrf-token" name="_token" value="{{ csrf_token() }}">
+        <div class="elem">
+            <h2>Odchodzisz? Zostaw swój e-mail <span><br> otrzymasz powiadomienia<br>o nowych wpisach i rabatach na kurs</span>
+            </h2>
+        </div>
+        <div class="elem">
+            <label for="email">Email: </label>
+            <input class="email" id="email" type="email" placeholder="Podaj swój e-mail"/>
+        </div>
+        <div class="elem">
+            <input class="send-email" id="send-email" type="button" value="Wyślij"/>
+        </div>
+    </div>
+
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/tm-scripts.js') }}"></script>
 </body>

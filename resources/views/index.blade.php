@@ -1,5 +1,7 @@
 @extends('layouts.base-layout')
 
+@section('pageTitle', 'Start')
+
 @section('content')
 
 
@@ -7,7 +9,6 @@
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
-
         </div>
     </div>
 
@@ -22,9 +23,9 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 date-box wow fadeInLeft" data-wow-delay="0.2s">
                             <div>
                                 <div class="badge">
-                                    {!! pol_day($posts[$i]) !!}
-                                    <span>{!! pol_month($posts[$i]) !!}</span>
-                                    <strong>6 <img src="img/page1_icon4.png" alt=""></strong>
+                                    {!! polDay($posts[$i]) !!}
+                                    <span>{!! polMonth($posts[$i]) !!}</span>
+                                    <strong>{!! commentsNumber($posts[$i]) !!}<img src="img/page1_icon4.png" alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
                                     <p>{{$posts[$i]['excerpt']}}</p>
@@ -38,9 +39,8 @@
                     <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie
                         wpisy</a>
             </div>
-            @endfor
-
         </div>
+            @endfor
 
         <div class="thumb-box2">
             <div class="container">
@@ -66,8 +66,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="thumb-box1 center">
             <div class="container">
                 <h2 class="center">Najnowsze wpisy</h2>
@@ -80,7 +78,7 @@
                                 <div class="caption">
                                     <a href="/blog/{{$post['id']}}" class="title">{{$post['title']}}</a>
                                     <br><br>
-                                    <p>{!! post_truncate($post) !!}</p>
+                                    <p>{!! postTruncate($post) !!}</p>
                                     <a href="/blog/{{$post['id']}}" class="btn-default btn1">Więcej...</a>
                                 </div>
                             </div>
@@ -89,7 +87,6 @@
                 @endforeach
             </div>
         </div>
-
         <div class="thumb-box3">
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>

@@ -1,6 +1,6 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle', 'Blog')
+@section('pageTitle', 'Blog - archiwum')
 
 @section('content')
     <div class="global indent">
@@ -16,7 +16,7 @@
                                     {!! polDay($post) !!}
                                     <span>{!! polMonth($post) !!}</span>
                                     <div class="badge_small">
-                                        <strong>{!! commentsNumber($post) !!}<img src="img/page2_icon1.png" alt=""></strong>
+                                        <strong>{!! commentsNumber($post) !!}<img src="/img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
                                 <a href="/blog/notka/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
@@ -29,9 +29,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <div class="btn-default.btn1" , style="text-align:center;">
-                                {{ $posts->render() }}
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,8 +39,14 @@
                             <li><a href="/blog/kategoria/{{$category['name']}}">{{$category['name']}}</a></li>
                         @endforeach
                     </ul>
+                    <h2 class="center indent">Najnowsze wpisy</h2>
+                    <ul class="list1-1 indent">
+                        @foreach($fiveLastPosts as $post)
+                            <li><a href="/blog/notka/{{$post['id']}}">{{$post['title']}}</a></li>
+                        @endforeach
+                    </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
-                    <ul class="list1-1">
+                    <ul class="list1-1 indent">
                         @foreach($postsByDates as $post)
                             <li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>
                         @endforeach

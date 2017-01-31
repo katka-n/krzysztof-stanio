@@ -12,17 +12,31 @@
 */
 
 
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+// zapisanie adresu e-mail z index do bazy mailingowej
+    Route::post('save', [
+        'uses' => 'NewsletterController@store',
+        'as' => 'email.save',
+    ]);
+
+    Route::post('/mailing', 'NewsletterController@store');
+
+});
+
+
+
 //index
 Route::get('/', [
     'uses' => 'PostController@index',
     'as' => 'index',
 ]);
 
-// zapisanie adresu e-mail z index do bazy mailingowej
-Route::post('save', [
-    'uses' => 'NewsletterController@store',
-    'as' => 'email.save',
-]);
+
+
 
 // dodawanie komentarzy widok
 Route::get('/blog/addcomments/{id}', [
@@ -41,10 +55,21 @@ Route::get('/blog', [
     'as' => 'blog',
 ]);
 
-Route::get('blog/{name}', [
-    'uses' => 'PostController@entry',
+Route::get('blog/notka/{id}', [
+    'uses' => 'PostController@byEntry',
     'as' => 'posts',
 ]);
+
+Route::get('blog/kategoria/{name}', [
+    'uses' => 'PostController@byCategory',
+    'as' => 'posts',
+]);
+
+Route::get('blog/archiwum/{year}/{day}', [
+    'uses' => 'PostController@byDate',
+    'as' => 'posts',
+]);
+
 
 //absolwenci
 Route::get('absolwenci', [
