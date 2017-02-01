@@ -48,16 +48,14 @@
                         @endforeach
                     </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
-                    <ul class="list1-1 indent">
-                        @foreach($postsByDates as $post)
-                            <li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>
-                        @endforeach
-                    </ul>
+                    {{--<ul class="list1-1 indent">--}}
+                        {{--@foreach($postsByDates as $post)--}}
+                            {{--<li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>--}}
+                        {{--@endforeach--}}
+                    {{--</ul>--}}
                 </div>
             </div>
 
-
-            <?php echo ($comments); ?>
 
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
@@ -118,7 +116,7 @@
 
 
 
-                <h3 style="text-align: center">Wasze Komentarze ({{count($comments)+count($anscomments)}})</h3>
+                <h3 style="text-align: center">Wasze Komentarze ({{$commentsNumber}})</h3>
 
 
                 @foreach($comments as $comment)
@@ -133,14 +131,14 @@
 
 
                         <div   class="container4" >
-                         <b>~{{$comment->nick}}</b>
+                         <b>~{{$comment['main']->nick}}</b>
                        </div>
 
 
 
 
                         <div >
-                           -{{ $comment->created_at->diffForHumans() }}    {{--<br>{{$comment->created_at}}--}}
+                           -{{ $comment['main']->created_at->diffForHumans() }}    {{--<br>{{$comment->created_at}}--}}
                        </div><br><br><br>
 
 
@@ -151,19 +149,19 @@
 
 
                        <div   class="comments" >
-                           {{$comment->comment}}
+                           {{$comment['main']->comment}}
 
                            {{--Odpowiedz na komentarz--}}
                            <div class="dropdown" style="font-size: 12px"><br>
-                               <button  class="btn btn-default" onclick="myFunction({{ $comment->id }})"><b>ODPOWIEDZ</b></button>
-                               <div  class="dropdown-content myDropdown{{ $comment->id }}">
+                               <button  class="btn btn-default" onclick="myFunction({{ $comment['main']->id }})"><b>ODPOWIEDZ</b></button>
+                               <div style="display:none;" class="dropdown-content myDropdown{{ $comment['main']->id }}">
                                    <form onsubmit="return validateForm()" class="form-comment-hidden" method="post" action="{{route('blog.savecomments',$posts->id)}}">
                                        {{ csrf_field() }}
                                        <div class="form-group" >
 
                                            <textarea class="form-content" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
-                                           <input type="hidden" name="comment_id" value="{{$comment->id}}">
-                                           <input type="hidden" name="post_id" value="{{$comment->posts_id}}">
+                                           <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
+                                           <input type="hidden" name="post_id" value="{{$comment['main']->posts_id}}">
 
 
 
@@ -174,24 +172,49 @@
                                    </form>
 
                                </div>
-                           </div>
+                           </div><br>
 
                            <i><div class="answer">
-                           @foreach($anscomments as $anscomment)
 
-                               @if( $comment->id == $anscomment->parent)
+                           @if(isSet($comment['child']))
 
-                                           <div style="color:#555a78;"><b> ~{{ $anscomment->nick }} </b></div>
+                           @foreach($comment['child']  as $child)
 
-
-                                          <div> {{ $anscomment->created_at->diffForHumans() }} </div>
+                                           <div style="color:#555a78;"><b> ~{{ $child->nick }} </b></div>
 
 
+                                          <div> {{ $child->created_at->diffForHumans() }} </div>
 
-                               <div>Odp. do <b>~{{ $comment->nick }}</b><br>  {{ $anscomment->comment }}<br><br></div>
+
+
+                               <div>  {{ $child->comment }}
+                                   <div class="dropdown" style="font-size: 12px"><br>
+                                       <button  class="btn btn-default" onclick="myFunction({{ $child->id }})"><b>ODPOWIEDZ</b></button>
+                                       <div style="display:none;" class="dropdown-content myDropdown{{ $child->id }}">
+                                           <form onsubmit="return validateForm()" class="form-comment-hidden" method="post" action="{{route('blog.savecomments',$posts->id)}}">
+                                               {{ csrf_field() }}
+                                               <div class="form-group" >
+
+                                                   <textarea class="form-content" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
+                                                   <input type="hidden" name="comment_id" value="{{$child->id}}">
+                                                   <input type="hidden" name="post_id" value="{{$child->posts_id}}">
+
+
+
+                                                   <input style="width: auto" type="text" class="form-control form-nick" name="nick" placeholder="Podpisz się">
+                                               </div>
+
+                                               <button type="submit" class="btn btn-primary">Dodaj</button>
+                                           </form>
+
+                                       </div>
+                                   </div>
+                               </div><br><br>
+
+                                    @endforeach
 
                                @endif
-                                    @endforeach
+
                        </div> </i>
 
 
