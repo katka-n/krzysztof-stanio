@@ -31,7 +31,7 @@ class GraduatesController extends Controller
     // wyswietlanie pojedynczego absolwenta
     function single_graduate($id)
     {
-        $graduate = Graduates::where('id', $id)->first();
+        $graduate = Graduates::find($id);
         return view('absolwent', ['graduate' => $graduate]);
     }
 

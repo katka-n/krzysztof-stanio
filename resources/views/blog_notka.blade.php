@@ -48,11 +48,13 @@
                         @endforeach
                     </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
-                    {{--<ul class="list1-1 indent">--}}
-                        {{--@foreach($postsByDates as $post)--}}
-                            {{--<li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
+
+                    <ul class="list1-1 indent">
+                        @foreach($postsByDates as $post)
+                            <li><a href="/blog/archiwum/{{$post->year}}/{{$post->month}}">{!! fullMonth($post) !!} {{$post->year}}  </a></li>
+                        @endforeach
+                    </ul>
+
                 </div>
             </div>
 
