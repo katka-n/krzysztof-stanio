@@ -138,7 +138,7 @@
 
 
                         <div >
-                           -{{ $comment['main']->created_at->diffForHumans() }}    {{--<br>{{$comment->created_at}}--}}
+                           --{{ $comment['main']->created_at->diffForHumans() }}    {{--<br>{{$comment->created_at}}--}}
                        </div><br><br><br>
 
 
@@ -180,10 +180,11 @@
 
                            @foreach($comment['child']  as $child)
 
-                                           <div style="color:#555a78;"><b> ~{{ $child->nick }} </b></div>
+                                           <div class="answer1" style="color:#555a78"><b> ~{{ $child->nick }} </b></div>
 
 
-                                          <div> {{ $child->created_at->diffForHumans() }} </div>
+                                          <div class="answer1" > --{{ $child->created_at->diffForHumans() }} </div><br><br>
+
 
 
 
@@ -196,7 +197,7 @@
                                                <div class="form-group" >
 
                                                    <textarea class="form-content" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
-                                                   <input type="hidden" name="comment_id" value="{{$child->id}}">
+                                                   <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
                                                    <input type="hidden" name="post_id" value="{{$child->posts_id}}">
 
 

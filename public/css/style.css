@@ -1685,7 +1685,7 @@ footer span {
 }
 
 .container{
-	width: 900px;
+	width: 950px;
 
 }
 
@@ -1695,8 +1695,8 @@ footer span {
 }
 
 .container3{
-	width:90%;
 	float: left;
+	width:90%;
 	font-style:inherit;
 	font-size: 17px;
 	color: #1a1a1a;
@@ -1713,4 +1713,9 @@ footer span {
 .answer{
 	padding-left: 100px;
 
+}
+
+.answer1{
+
+	float:left;
 }
