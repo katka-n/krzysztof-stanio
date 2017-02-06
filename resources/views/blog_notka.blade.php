@@ -48,47 +48,196 @@
                         @endforeach
                     </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
+
                     <ul class="list1-1 indent">
                         @foreach($postsByDates as $post)
-                            <li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>
+                            <li><a href="/blog/archiwum/{{$post->year}}/{{$post->month}}">{!! fullMonth($post) !!} {{$post->year}}  </a></li>
                         @endforeach
                     </ul>
+
                 </div>
             </div>
 
 
-            <?php echo ($comments); ?>
-
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
             @endif
-            <div>           <h3 style="text-align: center">Komentarze</h3>   <a href="{{ route('blog.addcomments',[$posts['id']]) }}"><h3 style="color:#4b0d77">>>>Dodaj komentarz<<<</h3></a>
+            <div class="thumb-pad7 clearfix">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <div class="extra-wrap">
+                    {!! Form::open([
+                     'url' => '/blog/savecomments/'.$posts->id,
+                     'id' => 'comment-create',
+                     'class' => 'form-horizontal col-md-6',
+                     'files' => true,
+                     'role'  => 'form',
+                     'method'  => 'post'
+                     ]) !!}
+
+
+                    <div class="inner-wrap">
+
+                        {!! Form::textarea('comment', null, ['class'=>'form-control','placeholder'=>'Twój komentarz']) !!}
+
+                    </div>
+
+                    {!! Form::hidden('post_id', $posts->id, ['class'=>'form-control']) !!}
+
+                    <div style="margin-top: 20px" class="inner-wrap">
+
+                        {!! Form::text('nick', null, ['class'=>'form-control','placeholder'=>'Podpisz się']) !!}
+
+                    </div>
+
+                    <div style="margin-top: 20px" class="button-section">
+                        {!! Form::submit(trans('Dodaj'), ['id' => 'add-comment', 'class'=>'btn btn-primary']) !!}
+
+                        {{--{!! link_to(URL::previous(), 'Powrót', ['class' => 'btn btn-default']) !!}--}}
+                        {!! Form::close() !!}
+
+                    </div>
+
+
+                    <div class="btn-default.btn1" , style="text-align:center;">
+                        {{--{{ $posts->render() }}--}}
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+                <h3 style="text-align: center">Wasze Komentarze ({{$commentsNumber}})</h3>
 
 
                 @foreach($comments as $comment)
-               <div class="flex-container" style="background-color: #878787; color: #323232; display: flex; ">
+              <div class="container" >
 
-                       <div class="flex-item" style="background-color: #b4b4b4; height: 70px; width: 100px;">
-                         Nick:<br>{{$comment->nick}}
+                  <div  class="container2" >
+                      <img src="{{ asset('img/comment.png') }}" width="45" height="45">
+                  </div>
+
+               <div class="container3"  >
+
+
+
+                        <div   class="container4" >
+                         <b>~{{$comment['main']->nick}}</b>
                        </div>
 
-                       <div class="flex-item" style="background-color: rgba(100, 149, 237, 0.24);height: 70px; width: 100px;">
-                           Data dodania:
+
+
+
+                        <div >
+                           --{{ $comment['main']->created_at->diffForHumans() }}    {{--<br>{{$comment->created_at}}--}}
+                       </div><br><br><br>
+
+
+
+
+
+
+
+
+                       <div   class="comments" >
+                           {{$comment['main']->comment}}
+
+                           {{--Odpowiedz na komentarz--}}
+                           <div class="dropdown" style="font-size: 12px"><br>
+                               <button  class="btn btn-default" onclick="myFunction({{ $comment['main']->id }})"><b>ODPOWIEDZ</b></button>
+                               <div style="display:none;" class="dropdown-content myDropdown{{ $comment['main']->id }}">
+                                   <form onsubmit="return validateForm()" class="form-comment-hidden" method="post" action="{{route('blog.savecomments',$posts->id)}}">
+                                       {{ csrf_field() }}
+                                       <div class="form-group" >
+
+                                           <textarea class="form-content" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
+                                           <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
+                                           <input type="hidden" name="post_id" value="{{$comment['main']->posts_id}}">
+
+
+
+                                           <input style="width: auto" type="text" class="form-control form-nick" name="nick" placeholder="Podpisz się">
+                                       </div>
+
+                                       <button type="submit" class="btn btn-primary">Dodaj</button>
+                                   </form>
+
+                               </div>
+                           </div><br>
+
+                           <i><div class="answer">
+
+                           @if(isSet($comment['child']))
+
+                           @foreach($comment['child']  as $child)
+
+                                           <div class="answer1" style="color:#555a78"><b> ~{{ $child->nick }} </b></div>
+
+
+                                          <div class="answer1" > --{{ $child->created_at->diffForHumans() }} </div><br><br>
+
+
+
+
+                               <div>  {{ $child->comment }}
+                                   <div class="dropdown" style="font-size: 12px"><br>
+                                       <button  class="btn btn-default" onclick="myFunction({{ $child->id }})"><b>ODPOWIEDZ</b></button>
+                                       <div style="display:none;" class="dropdown-content myDropdown{{ $child->id }}">
+                                           <form onsubmit="return validateForm()" class="form-comment-hidden" method="post" action="{{route('blog.savecomments',$posts->id)}}">
+                                               {{ csrf_field() }}
+                                               <div class="form-group" >
+
+                                                   <textarea class="form-content" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
+                                                   <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
+                                                   <input type="hidden" name="post_id" value="{{$child->posts_id}}">
+
+
+
+                                                   <input style="width: auto" type="text" class="form-control form-nick" name="nick" placeholder="Podpisz się">
+                                               </div>
+
+                                               <button type="submit" class="btn btn-primary">Dodaj</button>
+                                           </form>
+
+                                       </div>
+                                   </div>
+                               </div><br><br>
+
+                                    @endforeach
+
+                               @endif
+
+                       </div> </i>
+
+
+
+
                        </div>
-                   
-                       <div class="flex-item" style="background-color: rgba(24, 34, 57, 0.6); height: 140px; width: 870px;">
-                           {{$comment->comment}}
-                       </div>
-                   
+
+
 
 
                </div>
+
+              </div>
+                <br><br><br><br>
                 @endforeach
 
 
 
 
-            </div> <br><br>
+            </div>
 
         </div>
 

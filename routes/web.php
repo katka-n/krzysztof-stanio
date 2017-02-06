@@ -44,7 +44,7 @@ Route::get('/blog/addcomments/{id}', [
     'as' => 'blog.addcomments',
 ]);
 
-Route::any('/blog/savecomments/{id}', [
+Route::post('/blog/savecomments/{id}', [
     'uses' => 'PostController@store',
     'as' => 'blog.savecomments',
 ]);
@@ -62,12 +62,12 @@ Route::get('blog/notka/{id}', [
 
 Route::get('blog/kategoria/{name}', [
     'uses' => 'PostController@byCategory',
-    'as' => 'posts',
+    'as' => 'posts.kategoria',
 ]);
 
 Route::get('blog/archiwum/{year}/{day}', [
     'uses' => 'PostController@byDate',
-    'as' => 'posts',
+    'as' => 'posts.archiwum',
 ]);
 
 

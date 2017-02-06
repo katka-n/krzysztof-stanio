@@ -44,6 +44,30 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
         }
     });
 </script>
+<script type="text/javascript">
+
+    function myFunction(counter) {
+        $('.myDropdown'+counter).toggle();
+    }
+
+    $(document).ready(function(){
+
+        $('.form-comment-hidden').on('submit',function(){
+
+
+            var content = $(this).find('.form-content').val();
+            if(content=='') {
+                alert('Wypełnij pola');
+            }
+            console.log(content);
+
+            return true;
+        });
+
+
+    });
+
+</script>
 
 
 <!--[if lt IE 9]>
