@@ -79,10 +79,10 @@
                             <div class="badge"><img src="{{ URL::asset('img/page1_icon2.png') }}" alt=""></div>
                             <div class="thumbnail">
                                 <div class="caption">
-                                    <a href="/blog/{{$post['id']}}" class="title">{{$post['title']}}</a>
+                                    <a href="/blog/{{$post['slug']}}" class="title">{{$post['title']}}</a>
                                     <br><br>
                                     <p>{!! postTruncate($post) !!}</p>
-                                    <a href="/blog/{{$post['id']}}" class="btn-default btn1">Więcej...</a>
+                                    <a href="/blog/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
                                 </div>
                             </div>
                         </div>

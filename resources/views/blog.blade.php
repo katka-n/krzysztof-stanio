@@ -21,7 +21,7 @@
                                         <strong>{!! commentsNumber($post) !!}<img src="img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
-                                <a href="/blog/notka/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
+                                <a href="/blog/notka/{{$post['slug']}}" class="lnk">{{$post['title']}}</a>
                                 <p class="post">Wysłane {{$post['created_at']}}, w
                                     kategorii {!! categoryName($post, $categories) !!}
                                     <br></p>

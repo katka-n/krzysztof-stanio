@@ -21,7 +21,7 @@
                                         <strong>{!! commentsNumber($post) !!}<img src="/img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
-                                <a href="/blog/notka/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
+                                <a href="/blog/notka/{{$post['slug']}}" class="lnk">{{$post['title']}}</a>
                                 <p class="post">Wysłane {{$post['created_at']}}, w
                                     kategorii {!! categoryName($post, $categories) !!}
                                     <br></p>
@@ -44,7 +44,7 @@
                     <h2 class="center indent">Najnowsze wpisy</h2>
                     <ul class="list1-1 indent">
                         @foreach($fiveLastPosts as $post)
-                            <li><a href="/blog/notka/{{$post['id']}}">{{$post['title']}}</a></li>
+                            <li><a href="/blog/notka/{{$post['slug']}}">{{$post['title']}}</a></li>
                         @endforeach
                     </ul>
                     <h2 class="center indent">Archiwum wpisów</h2>
