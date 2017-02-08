@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon"/>
-    <meta name="description" content="Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!">
-    <meta name="keywords" content="szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne,
-jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper ">
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
     <meta name="dyktek" content="Krzysztof Stanio">
 </head>
 

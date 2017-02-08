@@ -1,6 +1,10 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle', 'Blog')
+@section('pageTitle'){{$posts['seo_title']}}@endsection
+
+@section('description'){{$posts['meta_description']}}@endsection
+
+@section('keywords'){{$posts['meta_keywords']}}@endsection
 
 @section('content')
     <div class="global indent">
@@ -18,8 +22,7 @@
                                         <strong>{!! commentsNumber($posts) !!}<img src="/img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
-
-                            <a href="/blog/notka/{{$posts['id']}}" class="lnk">{{$posts['title']}}</a>
+                            <a href="/blog/notka/{{$posts['slug']}}" class="lnk">{{$posts['title']}}</a>
                             <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {!! categoryName($posts, $categories) !!}
                                 <br></p>
                             <div class="thumbnail">
