@@ -9,6 +9,7 @@
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
+            <p class="title wow fadeInDown" data-wow-delay="0.2s"><img class="logo" src="/img/logo.png"></p>
         </div>
     </div>
 

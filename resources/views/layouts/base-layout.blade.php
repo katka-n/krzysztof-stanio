@@ -89,8 +89,8 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
 <header class="clearfix">
     <div class="container">
         <div class="box clearfix">
-        <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
-                            src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>
+        {{--<h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img--}}
+                            {{--src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>--}}
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">

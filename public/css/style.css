@@ -88,7 +88,7 @@ nav.tm_navbar {
 	border: none;
 	padding: 0;
 	margin: 24px 0;
-	float: right;
+	float: none;
 	display: inline-block;
 	min-height: 0;
 }
@@ -303,6 +303,7 @@ header .box {
 	background: #272d45;
 	background: rgba(39, 45, 69, 0.96);
 	position: relative;
+	text-align: center;
 }
 header.indent {
 	background: #f2f2f2;
@@ -1718,4 +1719,9 @@ footer span {
 .answer1{
 
 	float:left;
+}
+
+.logo {
+	margin-top: 12px;
+	/*width: 100px;*/
 }
