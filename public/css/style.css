@@ -88,7 +88,7 @@ nav.tm_navbar {
 	border: none;
 	padding: 0;
 	margin: 24px 0;
-	float: none;
+	float: right;
 	display: inline-block;
 	min-height: 0;
 }
@@ -210,13 +210,13 @@ nav.tm_navbar .sub-menu > ul li {
 	display: block;
 }
 nav.tm_navbar .sub-menu > ul li a {
+	display: block;
 	background: transparent;
 	padding: 0 0 0 44px;
 	margin: 0;
 	float: none;
 	font: 12px/23px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #929292;
-	display: block;
 	text-transform: none;
 	-webkit-transition: all 0.35s;
 	transition: all 0.35s;
@@ -303,7 +303,6 @@ header .box {
 	background: #272d45;
 	background: rgba(39, 45, 69, 0.96);
 	position: relative;
-	text-align: center;
 }
 header.indent {
 	background: #f2f2f2;
@@ -558,7 +557,6 @@ footer span {
 	font-size: 36px;
 	display: block;
 	text-transform: uppercase;
-	margin-top: 7px;
 
 }
 .date-box > div .badge strong {
@@ -1678,24 +1676,24 @@ footer span {
 
 }
 
-.dropdown{
+.dropdown_comments {
 
 	color: #434343;
 	text-align: left;
 
 }
 
-.container{
+.container_comments {
 	width: 950px;
 
 }
 
-.container2{
+.container2_comments {
 	float: left;
 	width: 10%;
 }
 
-.container3{
+.container3_comments {
 	float: left;
 	width:90%;
 	font-style:inherit;
@@ -1703,7 +1701,7 @@ footer span {
 	color: #1a1a1a;
 }
 
-.container4{
+.container4_comments{
 	float: left;
 	font-size: 17px;
 	height: 50px;

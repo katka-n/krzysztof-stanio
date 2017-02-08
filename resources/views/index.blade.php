@@ -42,9 +42,8 @@
                     <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie
                         wpisy</a>
             </div>
-        </div>
             @endfor
-
+        </div>
         <div class="thumb-box2">
             <div class="container">
                 <h2 class="center">Absolwenci moich kursów</h2>

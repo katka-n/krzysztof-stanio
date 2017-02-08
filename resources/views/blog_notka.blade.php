@@ -107,12 +107,12 @@
             </div>
             <h3 style="text-align: center">Wasze Komentarze ({{$commentsNumber}})</h3>
             @foreach($comments as $comment)
-                <div class="container">
-                    <div class="container2">
+                <div class="container_comments">
+                    <div class="container2_comments">
                         <img src="{{ asset('img/comment.png') }}" width="45" height="45">
                     </div>
-                    <div class="container3">
-                        <div class="container4">
+                    <div class="container3_comments">
+                        <div class="container4_comments">
                             <b>~{{$comment['main']->nick}}</b>
                         </div>
                         <div>
@@ -123,7 +123,7 @@
                             {{$comment['main']->comment}}
 
                             {{--Odpowiedz na komentarz--}}
-                            <div class="dropdown" style="font-size: 12px"><br>
+                            <div class="dropdown_comments" style="font-size: 12px"><br>
                                 <button class="btn btn-default" onclick="myFunction({{ $comment['main']->id }})"><b>ODPOWIEDZ</b>
                                 </button>
                                 <div style="display:none;"
