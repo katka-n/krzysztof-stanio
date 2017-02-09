@@ -17,7 +17,6 @@
 
     <div class="global2">
         <!--content-->
-
         <div class="thumb-box8 center">
             <div class="container">
                 <h2 class="center">Najnowszy wpis na blogu</h2>
@@ -93,8 +92,7 @@
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>
                 <p class="wow fadeInUp">Jeżeli chcesz otrzymywać powiadomienia o najnowszych wpisach, kursach - wpisz
-                    swój
-                    adres e-mail.</p>
+                    swój adres e-mail.</p>
 
                 <div class="row" id="newsletter">
                     <div class="col-lg-12 wow fadeInUp">
@@ -107,15 +105,11 @@
                         {!! Form::submit('Wyślij!', array()) !!}
 
                         {!! Form::close() !!}
-
                     </div>
                     <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
-
-
                 </div>
             </div>
         </div>
     </div>
-
 
 @endsection

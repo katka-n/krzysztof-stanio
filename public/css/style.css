@@ -1571,8 +1571,8 @@ footer span {
 	position:absolute;
 	top:0;
 	left:0;
-	height: 50%;
-	width: 50%;
+	height: 20%;
+	width: 20%;
 }
 
 .thumbnail img {
@@ -1670,56 +1670,72 @@ footer span {
 	border-radius: 3px;
 }
 
-
-.dropdown-content {
-	display:none;
-
-}
-
-.dropdown_comments {
-
-	color: #434343;
-	text-align: left;
-
-}
-
-.container_comments {
-	width: 950px;
-
-}
-
-.container2_comments {
-	float: left;
-	width: 10%;
-}
-
-.container3_comments {
-	float: left;
-	width:90%;
-	font-style:inherit;
+.comments {
+	height: auto;
 	font-size: 17px;
-	color: #1a1a1a;
-}
-
-.container4_comments{
-	float: left;
-	font-size: 17px;
-	height: 50px;
-	word-wrap: break-word;
-	color:#555a78;
-}
-
-.answer{
-	padding-left: 100px;
-
-}
-
-.answer1{
-
-	float:left;
+    line-height: 29px;
 }
 
 .logo {
 	margin-top: 12px;
 	/*width: 100px;*/
+}
+
+.comments-container {
+	width: auto;
+	margin: 5em auto;
+}
+
+ul, li {
+	list-style: none;
+}
+
+ul.simple-nested li {
+	margin-left: 3em;
+}
+
+div.comment {
+	padding: 1em;
+	margin-bottom: 1em;
+
+
+}
+
+em {
+	font-size: 0.75em;
+}
+
+.dropdown_comments {
+
+	color: black;
+	padding: 1em;
+}
+
+.inner-wrap {
+	width: auto;
+	height: auto;
+}
+
+div.reply {
+	padding: 1em;
+	padding-bottom: 1em;
+	min-width: 20%;
+}
+
+.form-control comment {
+	width: auto;
+	background: #00acee;
+}
+.form-control form-nick {
+	width: auto;
+	background: #00acee;
+}
+
+.video_thumbnail {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 35px;
+	height: 0;
+	overflow: hidden;
+
 }

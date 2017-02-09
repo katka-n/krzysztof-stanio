@@ -34,7 +34,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
-
+<script type="text/javascript" src="{{ URL::asset('js/jquery.fitvids.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -43,6 +43,13 @@
         }
     });
 </script>
+
+<script>
+    $(document).ready(function(){
+        $(".extra-wrap").fitVids();
+    });
+</script>
+
 <script type="text/javascript">
 
     function myFunction(counter) {
@@ -67,7 +74,6 @@
     });
 
 </script>
-
 
 <!--[if lt IE 9]>
 <div style='text-align:center'><a

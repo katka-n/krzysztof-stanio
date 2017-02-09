@@ -169,7 +169,7 @@ class PostController extends Controller
             $anscomment->parent = $commentRequest->input('comment_id');
             $anscomment->save();
 
-            Session::flash('message', 'Komentarz czeka na publikację.');
+            Session::flash('message', 'Komentarz został zapisany');
 
             return redirect()->route('posts', compact('slug'));
 
@@ -187,7 +187,7 @@ class PostController extends Controller
 
             $comment->save();
 
-            Session::flash('message', 'Komentarz czeka na publikację.');
+            Session::flash('message', 'Komentarz został zapisany');
 
             return redirect()->route('posts', compact('slug'));
 
