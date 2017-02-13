@@ -16,7 +16,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="thumb-pad2">
                                 <div class="thumbnail">
-                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
+                                    <figure><img src="/img/graduates/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
                                         <p>{{$graduates[$i]['description']}}</p>
@@ -38,7 +38,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="thumb-pad2">
                                 <div class="thumbnail">
-                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
+                                    <figure><img src="/img/graduates/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
                                         <p>{{$graduates[$i]['description']}}</p>
