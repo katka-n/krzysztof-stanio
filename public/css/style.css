@@ -1816,7 +1816,11 @@ div.reply {
 .list__item img {
 	width: 36px;
 	height: 37px;
+}
 
+.list__item .graduate {
+	width: 100%;
+	height: auto;
 }
 .product-name {
 	text-transform: uppercase;
@@ -1842,6 +1846,46 @@ div.reply {
 	font-size: 24px;
 }
 .product-old-price {
+	font-size: 12px;
+	text-decoration: line-through;
+	color: #ccc;
+}
+
+.list_graduate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.graduate__item {
+	width: 30%;
+	height: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 10px;
+}
+
+.graduate_item .img {
+	width: 100%;
+	height: auto;
+}
+
+.graduate-name {
+	text-transform: uppercase;
+	font: bold 22px/30px 'Oswald';
+	margin-bottom: 15px;
+	border: none;
+}
+.product-name a {
+	color: #555a78;
+}
+.graduate-description {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.graduate-button {
 	font-size: 12px;
 	text-decoration: line-through;
 	color: #ccc;

@@ -25,6 +25,7 @@
                                         <a href="/absolwent/{{$graduate['id']}}"
                                            class="btn-default btn1">
                                             Czytaj dalej...</a>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>

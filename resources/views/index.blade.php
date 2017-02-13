@@ -46,23 +46,23 @@
         <div class="thumb-box2">
             <div class="container">
                 <h2 class="center">Absolwenci moich kursów</h2>
-                <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque
-                    ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
-                <div class="row">
+                <div class="list_graduate">
                     @for ($i = 0; $i < 3; $i++)
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="thumb-pad_grad wow fadeInRight">
-                                <div class="thumbnail">
-                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
+                        <div class="graduate__item">
+                                    <img src="/storage/{{$graduates[$i]['photo']}}"alt=""></figure>
                                     <div class="caption">
+                                        <div class="graduate-name">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
+                                        </div>
+                                        <div class="graduate-description">
                                         <p>{!! $graduates[$i]['description'] !!}</p>
+                                        </div>
+                                        <div class="graduate-button">
                                         <a href="/absolwent/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
                                             dalej...</a>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
-                        </div>
                     @endfor
                 </div>
             </div>
