@@ -8,13 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class GraduatesController extends Controller
 {
-    // wyświetlanie 8 losowych absolwentow z bazy
     function index()
     {
-        
-        $graduates = Graduates::limit(8)->orderBy('id', 'ASC')->get()->toArray();
+        $graduates = Graduates::orderBy('id', 'ASC')->get()->toArray();
         return view('absolwenci', ['graduates' => $graduates]);
-
     }
 
     // wyswietlanie pojedynczego absolwenta

@@ -56,7 +56,7 @@
                                     <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
-                                        <p>{{$graduates[$i]['description']}}</p>
+                                        <p>{!! $graduates[$i]['description'] !!}</p>
                                         <a href="/absolwent/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
                                             dalej...</a>
                                     </div>
