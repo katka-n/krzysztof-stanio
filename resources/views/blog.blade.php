@@ -1,6 +1,8 @@
 @extends('layouts.base-layout')
 
 @section('pageTitle', 'Blog')
+@section('description','Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
+@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
 
 @section('content')
     <div class="global indent">
@@ -19,7 +21,7 @@
                                         <strong>{!! commentsNumber($post) !!}<img src="img/page2_icon1.png" alt=""></strong>
                                     </div>
                                 </div>
-                                <a href="/blog/notka/{{$post['id']}}" class="lnk">{{$post['title']}}</a>
+                                <a href="/blog/notka/{{$post['slug']}}" class="lnk">{{$post['title']}}</a>
                                 <p class="post">Wysłane {{$post['created_at']}}, w
                                     kategorii {!! categoryName($post, $categories) !!}
                                     <br></p>

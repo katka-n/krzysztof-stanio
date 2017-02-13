@@ -4,11 +4,10 @@
     <title>@yield('pageTitle') - od zera do WebDeva</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}co" type="image/x-icon"/>
-    <meta name="description" content="Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!">
-    <meta name="keywords" content="szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne,
-jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper ">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon"/>
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
     <meta name="dyktek" content="Krzysztof Stanio">
 </head>
 
@@ -35,7 +34,7 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
 <script type="text/javascript" src="{{ URL::asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-filestyle.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/wow/wow.js') }}"></script>
-
+<script type="text/javascript" src="{{ URL::asset('js/jquery.fitvids.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -44,6 +43,13 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
         }
     });
 </script>
+
+<script>
+    $(document).ready(function(){
+        $(".extra-wrap").fitVids();
+    });
+</script>
+
 <script type="text/javascript">
 
     function myFunction(counter) {
@@ -69,7 +75,6 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
 
 </script>
 
-
 <!--[if lt IE 9]>
 <div style='text-align:center'><a
         href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img
@@ -89,8 +94,8 @@ jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular
 <header class="clearfix">
     <div class="container">
         <div class="box clearfix">
-        <h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img
-                            src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>
+        {{--<h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img--}}
+                            {{--src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>--}}
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">

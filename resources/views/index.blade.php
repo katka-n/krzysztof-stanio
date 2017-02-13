@@ -1,6 +1,8 @@
 @extends('layouts.base-layout')
 
 @section('pageTitle', 'Start')
+@section('description','Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
+@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
 
 @section('content')
 
@@ -9,12 +11,12 @@
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
             <p class="description wow fadeInUp"><i></i>kursy programowania: online i stacjonarne<em></em></p>
+            <p class="title wow fadeInDown" data-wow-delay="0.2s"><img class="logo" src="/img/logo.png"></p>
         </div>
     </div>
 
     <div class="global2">
         <!--content-->
-
         <div class="thumb-box8 center">
             <div class="container">
                 <h2 class="center">Najnowszy wpis na blogu</h2>
@@ -39,9 +41,8 @@
                     <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie
                         wpisy</a>
             </div>
-        </div>
             @endfor
-
+        </div>
         <div class="thumb-box2">
             <div class="container">
                 <h2 class="center">Absolwenci moich kursów</h2>
@@ -76,10 +77,10 @@
                             <div class="badge"><img src="{{ URL::asset('img/page1_icon2.png') }}" alt=""></div>
                             <div class="thumbnail">
                                 <div class="caption">
-                                    <a href="/blog/{{$post['id']}}" class="title">{{$post['title']}}</a>
+                                    <a href="/blog/{{$post['slug']}}" class="title">{{$post['title']}}</a>
                                     <br><br>
                                     <p>{!! postTruncate($post) !!}</p>
-                                    <a href="/blog/{{$post['id']}}" class="btn-default btn1">Więcej...</a>
+                                    <a href="/blog/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +92,7 @@
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>
                 <p class="wow fadeInUp">Jeżeli chcesz otrzymywać powiadomienia o najnowszych wpisach, kursach - wpisz
-                    swój
-                    adres e-mail.</p>
+                    swój adres e-mail.</p>
 
                 <div class="row" id="newsletter">
                     <div class="col-lg-12 wow fadeInUp">
@@ -105,15 +105,11 @@
                         {!! Form::submit('Wyślij!', array()) !!}
 
                         {!! Form::close() !!}
-
                     </div>
                     <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
-
-
                 </div>
             </div>
         </div>
     </div>
-
 
 @endsection
