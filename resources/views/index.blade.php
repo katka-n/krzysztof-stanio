@@ -51,7 +51,7 @@
                 <div class="row">
                     @for ($i = 0; $i < 3; $i++)
                         <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="thumb-pad2 wow fadeInRight">
+                            <div class="thumb-pad_grad wow fadeInRight">
                                 <div class="thumbnail">
                                     <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">

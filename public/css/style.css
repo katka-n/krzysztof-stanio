@@ -477,7 +477,7 @@ footer span {
 .thumb-box2 {
 	position: relative;
 	overflow: hidden;
-	padding: 62px 0 67px 0;
+	padding: 30px 0 30px 0;
 	background: #f2f2f2 url(../img/triangle2.png) center top no-repeat;
 }
 
@@ -664,6 +664,42 @@ footer span {
 	box-sizing: border-box;
 }
 /*-----thumbs-----*/
+
+.thumb-pad_grad {
+	margin: 0 0 63px 0;
+	padding: 35px 35px 49px 35px;
+	overflow: hidden;
+	text-align: center;
+	overflow: visible !important;
+}
+.thumb-pad_grad .badge {
+	padding: 0;
+	margin: 0 0 0 -47px;
+	width: 94px;
+	height: 94px;
+	line-height: 94px;
+	text-align: center;
+	border-radius: 100%;
+	background: #b93a41;
+	float: left;
+	margin-right: 34px;
+	position: absolute;
+	top: -44px;
+	left: 50%;
+}
+.thumb-pad_grad .thumbnail {
+	position: relative;
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	background: none;
+	overflow: hidden;
+}
+
+
+
 .thumb-pad1 {
 	margin: 0 0 63px 0;
 	padding: 86px 35px 49px 35px;
@@ -672,6 +708,7 @@ footer span {
 	border: 1px solid #dadada;
 	text-align: center;
 	overflow: visible !important;
+
 }
 .thumb-pad1 .badge {
 	padding: 0;
@@ -726,6 +763,7 @@ footer span {
 	background: none;
 	overflow: hidden;
 }
+
 .thumb-pad2 figure {
 	margin: 0 0 26px 0;
 }
@@ -1578,7 +1616,7 @@ footer span {
 }
 
 .thumbnail img {
-	height:250px;
+	height:auto;
 	width:100%;
 }
 
