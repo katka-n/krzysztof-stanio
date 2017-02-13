@@ -303,6 +303,8 @@ header .box {
 	background: #272d45;
 	background: rgba(39, 45, 69, 0.96);
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 header.indent {
 	background: #f2f2f2;
@@ -1737,5 +1739,72 @@ div.reply {
 	padding-top: 35px;
 	height: 0;
 	overflow: hidden;
+}
 
+
+.list_blog {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.list__item {
+	width: 30%;
+	box-sizing: border-box;
+	border: 1px solid #dadada;
+	text-align: center;
+	padding: 10px;
+}
+.list__item > * {
+	position: relative;
+	padding-top: 5px;
+}
+
+.list__item .badge {
+	padding: 0;
+	margin: 0 0 0 -47px;
+	width: 94px;
+	height: 94px;
+	line-height: 94px;
+	text-align: center;
+	border-radius: 100%;
+	background: #b93a41;
+	float: left;
+	margin-right: 34px;
+	position: absolute;
+	top: 100px;
+}
+
+.list__item img {
+	width: 36px;
+	height: 37px;
+
+}
+.product-name {
+	text-transform: uppercase;
+	font: bold 22px/30px 'Oswald';
+	margin-bottom: 15px;
+	border: none;
+}
+.product-name a {
+	color: #555a78;
+}
+.product-description {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.product-related-links {
+	margin-bottom: 10px;
+}
+.product-related-links a {
+	display: block;
+}
+.product-price {
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+.product-old-price {
+	font-size: 12px;
+	text-decoration: line-through;
+	color: #ccc;
 }

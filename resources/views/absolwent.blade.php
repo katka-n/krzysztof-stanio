@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <div class="thumb-pad2 wow fadeInRight">
-                            <figure><img src="/storage/{{$graduate['photo']}}" alt=""></figure>
+                            <figure><img src="/img/{{$graduate['photo']}}" alt=""></figure>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">

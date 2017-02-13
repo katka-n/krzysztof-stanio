@@ -70,24 +70,30 @@
         <div class="thumb-box1 center">
             <div class="container">
                 <h2 class="center">Najnowsze wpisy</h2>
-                <br><br>
-                @foreach($posts as $post)
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="thumb-pad1 maxheight wow fadeIn" data-wow-delay="0.1s">
-                            <div class="badge"><img src="{{ URL::asset('img/page1_icon2.png') }}" alt=""></div>
-                            <div class="thumbnail">
-                                <div class="caption">
-                                    <a href="/blog/{{$post['slug']}}" class="title">{{$post['title']}}</a>
+                <br>
+                <div class="list_blog">
+                    @foreach($posts as $post)
+                            <div class="list__item">
+                                <div class="badge">
+                                    <img src="{{ URL::asset('img/page1_icon2.png') }}"alt="">
+                                </div>
+                                <div class="product-name">
                                     <br><br>
+                                    <a href="/blog/notka/{{$post['slug']}}" class="title">{{$post['title']}}</a>
+                                </div>
+                                <div class="product-description">
                                     <p>{!! postTruncate($post) !!}</p>
-                                    <a href="/blog/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
+                                </div>
+                                <div class="product-price">
+                                    <a href="/blog/notka/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                @endforeach
+
+                    @endforeach
+                </div>
             </div>
         </div>
+
         <div class="thumb-box3">
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>
@@ -111,5 +117,4 @@
             </div>
         </div>
     </div>
-
 @endsection
