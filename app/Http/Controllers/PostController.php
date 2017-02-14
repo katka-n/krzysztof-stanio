@@ -11,9 +11,13 @@ use App\Comments;
 use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+
 
 
 class PostController extends Controller
@@ -38,6 +42,8 @@ class PostController extends Controller
         return view('blog', ['posts' => $posts, 'categories' => $categories,
             'postsByDates' => $postsByDates]);
     }
+
+
 
     //wyswietlanie notek po id
     public function byEntry($slug)
@@ -143,6 +149,13 @@ class PostController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
 //    public function addcomments($id)
 //    {
 //        $categories = Categories::all();
@@ -169,9 +182,16 @@ class PostController extends Controller
             $anscomment->parent = $commentRequest->input('comment_id');
             $anscomment->save();
 
+<<<<<<< HEAD
+            Session::flash('message', 'Komentarz czeka na publikację.');
+            return Redirect::to(URL::previous() . "#back");
+
+//            return redirect()->route('posts', compact('id'));
+=======
             Session::flash('message', 'Komentarz został zapisany');
 
             return redirect()->route('posts', compact('slug'));
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
 
         } else {
             $id = $commentRequest->input('post_id');
@@ -189,9 +209,20 @@ class PostController extends Controller
 
             Session::flash('message', 'Komentarz został zapisany');
 
+<<<<<<< HEAD
+//            return redirect()->route('posts', compact('id'));
+            return Redirect::to(URL::previous() . "#back");
+=======
             return redirect()->route('posts', compact('slug'));
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
 
         }
+
+
+
+
+
+
 
 //        $id = $commentRequest->input('post_id');
 //        $anscomment = new Comments();
@@ -207,6 +238,15 @@ class PostController extends Controller
 
 
 
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+
+        Session::flush();
+
+        return redirect('/');
     }
 
 }

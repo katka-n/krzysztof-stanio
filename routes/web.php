@@ -93,6 +93,36 @@ Route::get('kontakt', [
     'uses' => 'ContactFormController@index',
 ]);
 
+//wyswietlanie filmów
+Route::get('filmy', [
+    'as' => 'movies',
+    'uses' => 'MoviesController@index',
+]);
+
+//formularz dostępowy dla userów
+Route::get('dostep', [
+    'as' => 'acces',
+    'uses' => 'MoviesController@acces',
+]);
+
+Route::post('dostep', [
+    'as' => 'save',
+    'uses' => 'MoviesController@store',
+]);
+
+//wylogowanie
+Route::get('logout', [
+    'as' => 'logout',
+    'uses' => 'PostController@getLogout',
+]);
+
+
+
+
+
+
+
+
 // routingi Voyagera
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -104,3 +134,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

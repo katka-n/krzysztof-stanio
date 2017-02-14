@@ -55,9 +55,14 @@
                     </ul>
                 </div>
             </div>
+<<<<<<< HEAD
+
+            <div id="back">
+=======
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
-            @endif
+            @endif</div>
             <div class="thumb-pad7 clearfix">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">

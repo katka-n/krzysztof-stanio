@@ -108,6 +108,21 @@
                         <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
                     <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kontakt')}}">kontakt</a></li>
+
+                    @if(Auth::user())
+                    <li class="{{ Request::is('logout') ? 'active sub-menu' : '' }}">
+                        <a href="{{URL::to('logout')}}">Wyloguj się</a></li>
+                        <div class="glyphicon glyphicon-user" style="color: white">
+
+                            <li style="color: white">
+                                <b><p>{{ Auth::user()->name }}</p></b></li>
+                        </div>
+                        @else
+                        <li class="{{ Request::is('login') ? 'active sub-menu' : '' }}">
+                            <a href="{{URL::to('login')}}">Zaloguj się</a></li>
+                        @endif
+
+
                 </ul>
             </nav>
         </div>
