@@ -4,10 +4,6 @@
 @section('keywords'){{$posts['meta_keywords']}}@endsection
 @section('content')
 
-
-
-
-
     <div class="global indent">
         <!--content-->
         <div class="container">
@@ -55,14 +51,9 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
-
-            <div id="back">
-=======
->>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
-            @endif</div>
+            @endif
             <div class="thumb-pad7 clearfix">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -148,7 +139,7 @@
                                                             <input type="hidden" name="post_id" value="{{$child->posts_id}}">
                                                             <input style="width: auto" type="text" class="form-control form-nick" name="nick"  placeholder="Podpisz się">
                                                         </div>
-                                                        <button type="submit" class="btn btn-default"><b>DODAJ</b></button>
+                                                        <button type="submit" class="btn btn-default"><b>DODAJ</b> </button>
                                                         <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
 
                                                     </form>

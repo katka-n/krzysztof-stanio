@@ -99,10 +99,25 @@ Route::get('filmy', [
     'uses' => 'MoviesController@index',
 ]);
 
+Route::get('film/{slug}', [
+    'as' => 'film',
+    'uses' => 'MoviesController@single',
+]);
+
+Route::get('filmy/kategoria/{name}', [
+    'uses' => 'MoviesController@byCategory',
+    'as' => 'filmy.kategoria',
+]);
+
+Route::get('filmy/archiwum/{year}/{day}', [
+    'uses' => 'MoviesController@byDate',
+    'as' => 'filmy.archiwum',
+]);
+
 //formularz dostępowy dla userów
 Route::get('dostep', [
-    'as' => 'acces',
-    'uses' => 'MoviesController@acces',
+    'as' => 'access',
+    'uses' => 'MoviesController@access',
 ]);
 
 Route::post('dostep', [
