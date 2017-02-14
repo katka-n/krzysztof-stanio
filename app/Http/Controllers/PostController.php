@@ -11,9 +11,13 @@ use App\Comments;
 use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+
 
 
 class PostController extends Controller
@@ -48,6 +52,8 @@ class PostController extends Controller
         return view('blog', ['posts' => $posts, 'categories' => $categories,
             'postsByDates' => $postsByDates]);
     }
+
+
 
     //wyswietlanie notek po id
     public function byEntry($id)
@@ -150,6 +156,13 @@ class PostController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
 //    public function addcomments($id)
 //    {
 //        $categories = Categories::all();
@@ -173,8 +186,9 @@ class PostController extends Controller
             $anscomment->save();
 
             Session::flash('message', 'Komentarz czeka na publikację.');
+            return Redirect::to(URL::previous() . "#back");
 
-            return redirect()->route('posts', compact('id'));
+//            return redirect()->route('posts', compact('id'));
 
         } else {
             $id = $commentRequest->input('post_id');
@@ -188,9 +202,16 @@ class PostController extends Controller
 
             Session::flash('message', 'Komentarz czeka na publikację.');
 
-            return redirect()->route('posts', compact('id'));
+//            return redirect()->route('posts', compact('id'));
+            return Redirect::to(URL::previous() . "#back");
 
         }
+
+
+
+
+
+
 
 //        $id = $commentRequest->input('post_id');
 //        $anscomment = new Comments();
@@ -206,6 +227,15 @@ class PostController extends Controller
 
 
 
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+
+        Session::flush();
+
+        return redirect('/');
     }
 
 }

@@ -58,10 +58,10 @@
                 </div>
             </div>
 
-
+            <div id="back">
             @if( Session::has('message') )
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
-            @endif
+            @endif</div>
             <div class="thumb-pad7 clearfix">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">

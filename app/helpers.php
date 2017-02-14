@@ -2,15 +2,15 @@
 
 function polMonth($posts)
 {
+
     $month = $posts['created_at'];
     $month_sub = substr($month, 5, 2);
-
     $months_arr = array('01' => 'STY', '02' => 'LUT', '03' => 'MAR',
         '04' => 'KWI', '05' => 'MAJ', '06' => 'CZE',
         '07' => 'LIP', '08' => 'SIE', '09' => 'WRZE',
         '10' => 'PAŹ', '11' => 'LIS', '12' => 'GRU');
 
-    $pol_month = $months_arr[$month_sub];
+    $pol_month = $months_arr['01'];
 
     return $pol_month;
 }
