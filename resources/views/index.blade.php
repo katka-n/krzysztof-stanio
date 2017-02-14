@@ -46,23 +46,23 @@
         <div class="thumb-box2">
             <div class="container">
                 <h2 class="center">Absolwenci moich kursów</h2>
-                <div class="list_graduate">
+                <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque
+                    ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+                <div class="row">
                     @for ($i = 0; $i < 3; $i++)
-                        <div class="graduate__item">
-                                    <img src="/storage/{{$graduates[$i]['photo']}}"alt=""></figure>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="thumb-pad2 wow fadeInRight">
+                                <div class="thumbnail">
+                                    <img src="/storage/{{$graduates[$i]['photo']}}" class="thumbnail" alt=""></figure>
                                     <div class="caption">
-                                        <div class="graduate-name">
                                         <p><b>{{$graduates[$i]['name']}}</b></p>
-                                        </div>
-                                        <div class="graduate-description">
                                         <p>{!! $graduates[$i]['description'] !!}</p>
-                                        </div>
-                                        <div class="graduate-button">
-                                        <a href="/absolwent/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
-                                            dalej...</a>
-                                        </div>
                                     </div>
+                                    <a href="/absolwent/{{$graduates[$i]['id']}}" class="btn-default btn1">Czytaj
+                                        dalej...</a>
+                                </div>
                             </div>
+                        </div>
                     @endfor
                 </div>
             </div>
@@ -70,27 +70,22 @@
         <div class="thumb-box1 center">
             <div class="container">
                 <h2 class="center">Najnowsze wpisy</h2>
-                <br>
-                <div class="list_blog">
-                    @foreach($posts as $post)
-                            <div class="list__item">
-                                <div class="badge">
-                                    <img src="{{ URL::asset('img/page1_icon2.png') }}"alt="">
-                                </div>
-                                <div class="product-name">
-                                    <br><br>
+                <br><br>
+                @foreach($posts as $post)
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="thumb-pad1 maxheight wow fadeIn" data-wow-delay="0.1s">
+                            <div class="badge"><img src="{{ URL::asset('img/page1_icon2.png') }}" alt=""></div>
+                            <div class="thumbnail">
+                                <div class="caption">
                                     <a href="/blog/notka/{{$post['slug']}}" class="title">{{$post['title']}}</a>
-                                </div>
-                                <div class="product-description">
+                                    <br><br>
                                     <p>{!! postTruncate($post) !!}</p>
                                 </div>
-                                <div class="product-price">
-                                    <a href="/blog/notka/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
-                                </div>
+                                <a href="/blog/notka/{{$post['slug']}}" class="btn-default btn1">Więcej...</a>
                             </div>
-
-                    @endforeach
-                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 

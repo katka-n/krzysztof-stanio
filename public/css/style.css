@@ -708,6 +708,7 @@ footer span {
 	border: 1px solid #dadada;
 	text-align: center;
 	overflow: visible !important;
+	height: 200px;
 
 }
 .thumb-pad1 .badge {
@@ -738,6 +739,7 @@ footer span {
 .thumb-pad1 .thumbnail .caption {
 	padding: 0;
 	overflow: hidden;
+	height: 250px;
 }
 .thumb-pad1 .thumbnail .caption p {
 	margin-bottom: 20px;
@@ -773,10 +775,12 @@ footer span {
 .thumb-pad2 .thumbnail .caption {
 	padding: 0;
 	overflow: hidden;
+	height: 200px;
 }
 .thumb-pad3 {
 	overflow: hidden;
 	margin: 0;
+
 }
 .thumb-pad3 .thumbnail {
 	position: relative;
@@ -1021,6 +1025,35 @@ footer span {
 .thumb-pad8 .thumbnail figure img {
 	width: 100%;
 }
+
+.thumb-pad9 {
+	margin: 0 0 30px 0;
+	overflow: hidden;
+	text-align: center;
+}
+.thumb-pad9 .thumbnail {
+	position: relative;
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	background: none;
+	overflow: hidden;
+}
+
+.thumb-pad9 figure {
+	margin: 0 0 26px 0;
+}
+.thumb-pad9 figure img {
+	width: 100%;
+}
+.thumb-pad9 .thumbnail .caption {
+	padding: 0;
+	overflow: hidden;
+	height: 250px;
+}
+
 /*-----btn-----*/
 .btn-default.btn1 {
 	box-shadow: none;
@@ -1028,7 +1061,7 @@ footer span {
 	display: inline-block;
 	padding: 0 20px;
 	font: bold 13px/34px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 0;
+	margin: 20px;
 	text-transform: uppercase;
 	text-shadow: none;
 	border-radius: 0;
@@ -1777,116 +1810,4 @@ div.reply {
 	padding-top: 35px;
 	height: 0;
 	overflow: hidden;
-}
-
-
-.list_blog {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-.list__item {
-	width: 30%;
-	box-sizing: border-box;
-	border: 1px solid #dadada;
-	text-align: center;
-	padding: 10px;
-}
-.list__item > * {
-	position: relative;
-	padding-top: 5px;
-}
-
-.list__item .badge {
-	padding: 0;
-	margin: 0 0 0 -47px;
-	width: 94px;
-	height: 94px;
-	line-height: 94px;
-	text-align: center;
-	border-radius: 100%;
-	background: #b93a41;
-	float: left;
-	margin-right: 34px;
-	position: absolute;
-	top: 100px;
-}
-
-.list__item img {
-	width: 36px;
-	height: 37px;
-}
-
-.list__item .graduate {
-	width: 100%;
-	height: auto;
-}
-.product-name {
-	text-transform: uppercase;
-	font: bold 22px/30px 'Oswald';
-	margin-bottom: 15px;
-	border: none;
-}
-.product-name a {
-	color: #555a78;
-}
-.product-description {
-	font-size: 12px;
-	margin-bottom: 10px;
-}
-.product-related-links {
-	margin-bottom: 10px;
-}
-.product-related-links a {
-	display: block;
-}
-.product-price {
-	margin-bottom: 10px;
-	font-size: 24px;
-}
-.product-old-price {
-	font-size: 12px;
-	text-decoration: line-through;
-	color: #ccc;
-}
-
-.list_graduate {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.graduate__item {
-	width: 30%;
-	height: 100%;
-	box-sizing: border-box;
-	text-align: center;
-	padding: 10px;
-}
-
-.graduate_item .img {
-	width: 100%;
-	height: auto;
-}
-
-.graduate-name {
-	text-transform: uppercase;
-	font: bold 22px/30px 'Oswald';
-	margin-bottom: 15px;
-	border: none;
-}
-.product-name a {
-	color: #555a78;
-}
-.graduate-description {
-	font-size: 12px;
-	margin-bottom: 10px;
-}
-
-.graduate-button {
-	font-size: 12px;
-	text-decoration: line-through;
-	color: #ccc;
 }

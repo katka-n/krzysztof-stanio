@@ -14,7 +14,7 @@
                 <div class="row">
                     @foreach($graduates as $graduate)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                            <div class="thumb-pad2">
+                            <div class="thumb-pad9">
                                 <div class="thumbnail">
                                     <figure>
                                         <img src="/storage/{{$graduate['photo']}}" class="thumbnail" alt="">
@@ -22,11 +22,10 @@
                                     <div class="caption">
                                         <p><b>{{$graduate['name']}}</b></p>
                                         {!!$graduate['description']!!}
-                                        <a href="/absolwent/{{$graduate['id']}}"
-                                           class="btn-default btn1">
-                                            Czytaj dalej...</a>
-                                        <hr>
                                     </div>
+                                    <a href="/absolwent/{{$graduate['id']}}"
+                                       class="btn-default btn1">
+                                        Czytaj dalej...</a>
                                 </div>
                             </div>
                         </div>

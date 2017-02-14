@@ -33,7 +33,8 @@
                                 <div class="caption">
                                     @if( ! empty($graduate['contact_mail'] || $graduate['contact_phone'] || $graduate['social_account']))
                                         <h3>Dane kontaktowe</h3>
-                                        <ul class="list1-1"> @if( ! empty($graduate['contact_mail']))
+                                        <ul class="list1-1">
+                                            @if( ! empty($graduate['contact_mail']))
                                                 <li>e-mail: {{$graduate['contact_mail']}}</li>
                                             @endif
                                             @if( ! empty($graduate['contact_phone']))
@@ -59,3 +60,4 @@
         </div>
     </div>
 @endsection
+
