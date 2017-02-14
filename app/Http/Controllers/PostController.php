@@ -182,64 +182,9 @@ class PostController extends Controller
             $anscomment->parent = $commentRequest->input('comment_id');
             $anscomment->save();
 
-<<<<<<< HEAD
-            Session::flash('message', 'Komentarz czeka na publikację.');
-            return Redirect::to(URL::previous() . "#back");
-
-//            return redirect()->route('posts', compact('id'));
-=======
-            Session::flash('message', 'Komentarz został zapisany');
-
-            return redirect()->route('posts', compact('slug'));
->>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
-
-        } else {
-            $id = $commentRequest->input('post_id');
-            $postsSlug= Post::select('slug')->where('id', $id)->first();
-            $slug = $postsSlug['slug'];
 
 
-            $comment = new Comments();
-            $comment->comment = $commentRequest->input('comment');
-            $comment->nick = $commentRequest->input('nick');
-            $comment->posts_id = $commentRequest->input('post_id');
-            $comment->parent = 0;
-
-            $comment->save();
-
-            Session::flash('message', 'Komentarz został zapisany');
-
-<<<<<<< HEAD
-//            return redirect()->route('posts', compact('id'));
-            return Redirect::to(URL::previous() . "#back");
-=======
-            return redirect()->route('posts', compact('slug'));
->>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
-
-        }
-
-
-
-
-
-
-
-//        $id = $commentRequest->input('post_id');
-//        $anscomment = new Comments();
-//        $anscomment->comment = $commentRequest->input('comment');
-//        $anscomment->nick = $commentRequest->input('nick');
-//        $anscomment->posts_id = $commentRequest->input('posts_id');
-//        $anscomment->parent = intval($commentId);
-//        $anscomment->save();
-//
-//        Session::flash('message', 'Komentarz czeka na publikację.');
-//
-//        return redirect()->route('posts', compact('id'));
-
-
-
-    }
-
+    }}
     public function getLogout()
     {
         Auth::logout();
