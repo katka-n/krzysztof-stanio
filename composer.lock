@@ -4,9 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c46abacf5c15e06bf872bc4a2156f390",
-    "content-hash": "2b1cceac0b0e941673d6ff96b89a9280",
+    "hash": "47366c319fdd0fdc4b038b99ae9532a3",
+    "content-hash": "cee1feb6ed045b1cf1a0da33e6010c7a",
     "packages": [
+        {
+            "name": "barryvdh/laravel-debugbar",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-debugbar.git",
+                "reference": "24e4f0261e352d3fd86d0447791b56ae49398674"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/24e4f0261e352d3fd86d0447791b56ae49398674",
+                "reference": "24e4f0261e352d3fd86d0447791b56ae49398674",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "maximebf/debugbar": "~1.13.0",
+                "php": ">=5.5.9",
+                "symfony/finder": "~2.7|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Debugbar\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "PHP Debugbar integration for Laravel",
+            "keywords": [
+                "debug",
+                "debugbar",
+                "laravel",
+                "profiler",
+                "webprofiler"
+            ],
+            "time": "2017-01-19 08:19:49"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.1.0",
@@ -1138,6 +1192,70 @@
                 "storage"
             ],
             "time": "2017-02-09 11:33:58"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "maximebf/debugbar",
+            "version": "1.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maximebf/php-debugbar.git",
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/afee79a236348e39a44cb837106b7c5b4897ac2a",
+                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "^1.0",
+                "symfony/var-dumper": "^2.6|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "suggest": {
+                "kriswallsmith/assetic": "The best way to manage assets",
+                "monolog/monolog": "Log using Monolog",
+                "predis/predis": "Redis storage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DebugBar\\": "src/DebugBar/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                },
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Debug bar in the browser for php application",
+            "homepage": "https://github.com/maximebf/php-debugbar",
+            "keywords": [
+                "debug",
+                "debugbar"
+            ],
+            "time": "2017-01-05 08:46:19"
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
         },
         {
             "name": "monolog/monolog",
@@ -1316,6 +1434,7 @@
         },
         {
             "name": "nikic/php-parser",
+<<<<<<< HEAD
             "version": "v3.0.3",
             "source": {
                 "type": "git",
@@ -1326,6 +1445,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
                 "reference": "5b8182cc0abb4b0ff290ba9df6c0e1323286013a",
+=======
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "0bf561dfe75ba80441c22adecc0529056671a7d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0bf561dfe75ba80441c22adecc0529056671a7d2",
+                "reference": "0bf561dfe75ba80441c22adecc0529056671a7d2",
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1494,11 @@
                 "parser",
                 "php"
             ],
+<<<<<<< HEAD
             "time": "2017-02-03 21:57:31"
+=======
+            "time": "2017-02-10 20:20:03"
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
         },
         {
             "name": "paragonie/random_compat",
@@ -1667,16 +1802,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.5",
+            "version": "v5.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "cd142238a339459b10da3d8234220963f392540c"
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd142238a339459b10da3d8234220963f392540c",
-                "reference": "cd142238a339459b10da3d8234220963f392540c",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
                 "shasum": ""
             },
             "require": {
@@ -1717,7 +1852,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29 10:02:40"
+            "time": "2017-02-13 07:52:53"
         },
         {
             "name": "symfony/console",
@@ -2501,6 +2636,7 @@
         },
         {
             "name": "tcg/voyager",
+<<<<<<< HEAD
             "version": "v0.10.13",
             "source": {
                 "type": "git",
@@ -2511,6 +2647,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/the-control-group/voyager/zipball/2ce26fc12ca1f1f7eb89b868ec651121f25571c7",
                 "reference": "2ce26fc12ca1f1f7eb89b868ec651121f25571c7",
+=======
+            "version": "v0.10.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/the-control-group/voyager.git",
+                "reference": "3828256a6944f9fb7032df4207d0770e33e72407"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/the-control-group/voyager/zipball/3828256a6944f9fb7032df4207d0770e33e72407",
+                "reference": "3828256a6944f9fb7032df4207d0770e33e72407",
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
                 "shasum": ""
             },
             "require": {
@@ -2548,7 +2696,11 @@
                 "laravel",
                 "panel"
             ],
+<<<<<<< HEAD
             "time": "2017-02-05 16:41:05"
+=======
+            "time": "2017-02-12 18:13:09"
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2751,16 +2903,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.7",
+            "version": "0.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371"
+                "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/4de7969f4664da3cef1ccd83866c9f59378c3371",
-                "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
+                "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
                 "shasum": ""
             },
             "require": {
@@ -2812,7 +2964,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-12-19 14:50:55"
+            "time": "2017-02-09 13:29:38"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3311,6 +3463,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "5.7.12",
             "source": {
                 "type": "git",
@@ -3321,6 +3474,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/944600e244f80a5252679878553b95c63dbf978b",
                 "reference": "944600e244f80a5252679878553b95c63dbf978b",
+=======
+            "version": "5.7.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "60ebeed87a35ea46fd7f7d8029df2d6f013ebb34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60ebeed87a35ea46fd7f7d8029df2d6f013ebb34",
+                "reference": "60ebeed87a35ea46fd7f7d8029df2d6f013ebb34",
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
                 "shasum": ""
             },
             "require": {
@@ -3389,7 +3554,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2017-02-08 05:54:05"
+=======
+            "time": "2017-02-10 09:05:10"
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
         },
         {
             "name": "phpunit/phpunit-mock-objects",

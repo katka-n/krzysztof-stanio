@@ -27,27 +27,17 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->take(3)->get();
-
-
         $graduates = Graduates::inRandomOrder()->take(3)->get();
-
-
-
         return view('index', ['posts' => $posts, 'graduates' => $graduates]);
-
     }
 
     // wyswietlanie artykulow na podstronie blog
     public function blog_index()
     {
         $posts = Post::orderBy('id', 'desc')->paginate(2);
-
         $categories = Categories::all();
-
-
         $postModel = new Post();
         $postsByDates = $postModel->archive();
-
 
         return view('blog', ['posts' => $posts, 'categories' => $categories,
             'postsByDates' => $postsByDates]);
@@ -56,12 +46,17 @@ class PostController extends Controller
 
 
     //wyswietlanie notek po id
-    public function byEntry($id)
+    public function byEntry($slug)
     {
         Carbon::setLocale('pl');
-        $posts = Post::where('id', $id)->first();
+
+        $posts = Post::where('slug', $slug)->first();
+
         $categories = Categories::all();
-        $comments = Comments::where('posts_id', $id)->orderBy('id', 'ASC')->get();
+
+        $postsId= Post::select('id')->where('slug', $slug)->first();
+
+        $comments = Comments::where('posts_id', $postsId['id'])->orderBy('id', 'ASC')->get();
 
 //        $postsByDates = Post::orderBy('created_at', 'DESC')->get();
 
@@ -95,7 +90,8 @@ class PostController extends Controller
 
 
         return view('blog_notka', [
-            'posts' => $posts, 'categories' => $categories,
+            'posts' => $posts,
+            'categories' => $categories,
             'comments' => $commentsTmp,
             'postsByDates' => $postsByDates,
             'commentsNumber' => $commentsNumber,
@@ -111,11 +107,8 @@ class PostController extends Controller
     {
         $categories = Categories::all();
 
-
-
         $categoriesModel = new Categories();
         $postsByCategories = $categoriesModel->categories($name);
-
 
         $postModel = new Post();
         $postsByDates = $postModel->archive();
@@ -178,6 +171,10 @@ class PostController extends Controller
         if(is_numeric($comment)){
 
             $id = $commentRequest->input('post_id');
+            $postsSlug= Post::select('slug')->where('id', $id)->first();
+            $slug = $postsSlug['slug'];
+
+
             $anscomment = new Comments();
             $anscomment->comment = $commentRequest->input('comment');
             $anscomment->nick = $commentRequest->input('nick');
@@ -185,13 +182,23 @@ class PostController extends Controller
             $anscomment->parent = $commentRequest->input('comment_id');
             $anscomment->save();
 
+<<<<<<< HEAD
             Session::flash('message', 'Komentarz czeka na publikację.');
             return Redirect::to(URL::previous() . "#back");
 
 //            return redirect()->route('posts', compact('id'));
+=======
+            Session::flash('message', 'Komentarz został zapisany');
+
+            return redirect()->route('posts', compact('slug'));
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
 
         } else {
             $id = $commentRequest->input('post_id');
+            $postsSlug= Post::select('slug')->where('id', $id)->first();
+            $slug = $postsSlug['slug'];
+
+
             $comment = new Comments();
             $comment->comment = $commentRequest->input('comment');
             $comment->nick = $commentRequest->input('nick');
@@ -200,10 +207,14 @@ class PostController extends Controller
 
             $comment->save();
 
-            Session::flash('message', 'Komentarz czeka na publikację.');
+            Session::flash('message', 'Komentarz został zapisany');
 
+<<<<<<< HEAD
 //            return redirect()->route('posts', compact('id'));
             return Redirect::to(URL::previous() . "#back");
+=======
+            return redirect()->route('posts', compact('slug'));
+>>>>>>> 25b5cfdc03b422ffa2cf9d9d3f6c22b899dc6fb5
 
         }
 

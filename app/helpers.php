@@ -49,33 +49,32 @@ function categoryName($posts, $categories)
 
 function iframeSearch($posts)
 {
-    $data = ($posts[0]['body']);
-    preg_match('#(?:<iframe[^>]*)(?:(?:/>)|(?:>.*?</iframe>))#i', $data, $matches);
-
-//    var_dump($matches);
-    $movie = $matches[0];
+    $data = ($posts['body']);
+    $matches =[];
+    preg_match('/(https?\:\/\/[^\/]+\/.+)\?/', $data, $matches);
+    $movie = ($matches[1]);
     return $movie;
 }
+    function fullMonth($post)
+    {
 
-function fullMonth($post)
-{
+        $originalMonth = $post['month'];
 
-    $originalMonth = $post['month'];
+        $months_arr = array('1' => 'Styczeń', '2' => 'Luty', '3' => 'Marzec',
+            '4' => 'Kwiecień', '5' => 'Maj', '6' => 'Czerwiec',
+            '07' => 'Lipiec', '8' => 'Sierpień', '9' => 'Wrzesień',
+            '10' => 'Październik', '11' => 'Listopad', '12' => 'Grudzień');
 
-    $months_arr = array('1' => 'Styczeń', '2' => 'Luty', '3' => 'Marzec',
-        '4' => 'Kwiecień', '5' => 'Maj', '6' => 'Czerwiec',
-        '07' => 'Lipiec', '8' => 'Sierpień', '9' => 'Wrzesień',
-        '10' => 'Październik', '11' => 'Listopad', '12' => 'Grudzień');
+        $fullMonth = $months_arr[$originalMonth];
 
-    $fullMonth = $months_arr[$originalMonth];
+        return $fullMonth;
+    }
 
-    return $fullMonth;
-}
+    function commentsNumber($post)
+    {
+        $commentsNumber = DB::table('comments')
+            ->where('posts_id', '=', $post['id'])
+            ->count();
+        return $commentsNumber;
 
-function commentsNumber($post) {
-    $commentsNumber = DB::table('comments')
-        ->where('posts_id', '=', $post['id'])
-        ->count();
-    return $commentsNumber;
-
-}
+    }

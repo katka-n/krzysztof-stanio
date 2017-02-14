@@ -55,7 +55,7 @@ Route::get('/blog', [
     'as' => 'blog',
 ]);
 
-Route::get('blog/notka/{id}', [
+Route::get('blog/notka/{slug}', [
     'uses' => 'PostController@byEntry',
     'as' => 'posts',
 ]);
