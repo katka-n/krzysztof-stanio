@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Moviescategory;
-use App\Mail\RegisterMail;
+use App\RegisterMailster;
 use App\Movie;
 use App\Moviescategory as moviescat;
 use App\Post;
