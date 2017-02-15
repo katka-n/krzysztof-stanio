@@ -1,9 +1,10 @@
 @extends('layouts.base-layout')
+
 @section('pageTitle'){{$posts['seo_title']}}@endsection
 @section('description'){{$posts['meta_description']}}@endsection
 @section('keywords'){{$posts['meta_keywords']}}@endsection
-@section('content')
 
+@section('content')
     <div class="global indent">
         <!--content-->
         <div class="container">
@@ -16,16 +17,18 @@
                                 <div class="badge">
                                     {!! polDay($posts) !!}
                                     <span>{!! polMonth($posts) !!}</span>
-                                    <strong>{!! commentsNumber($posts) !!}<img src="/img/page2_icon1.png" alt=""></strong>
+                                    <strong>{!! commentsNumber($posts) !!}<img src="/img/page2_icon1.png"
+                                                                               alt=""></strong>
                                 </div>
                             </div>
                             <a href="/blog/notka/{{$posts['slug']}}" class="lnk">{{$posts['title']}}</a>
-                            <p class="post">Wysłane {{$posts['created_at']}}, w kategorii {!! categoryName($posts, $categories) !!}
+                            <p class="post">Wysłane {{$posts['created_at']}}, w
+                                kategorii {!! categoryName($posts, $categories) !!}
                                 <br>
                             </p>
                             <p> {!!$posts['body']!!}</p>
-                            </div>
                         </div>
+                    </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-4 thumb-box4">
@@ -88,7 +91,6 @@
                     </div>
                 </div>
             </div>
-
             <h3 style="text-align: center">Wasze Komentarze ({{$commentsNumber}})</h3>
             @foreach($comments as $comment)
                 <div class="comments-container">
@@ -102,16 +104,20 @@
 
                                 {{--Odpowiedz na komentarz--}}
                                 <div class="dropdown_comments">
-                                    <button class="btn btn-default" onclick="myFunction({{ $comment['main']->id }})"><b>ODPOWIEDZ</b></button>
+                                    <button class="btn btn-default" onclick="myFunction({{ $comment['main']->id }})"><b>ODPOWIEDZ</b>
+                                    </button>
                                     <div style="display:none;"
                                          class="dropdown-content myDropdown{{ $comment['main']->id }}">
                                         <form onsubmit="return validateForm()" class="form-comment-hidden" method="post"
                                               action="{{route('blog.savecomments',$posts->id)}}"> {{ csrf_field() }}
                                             <div class="form-group">
-                                                <textarea class="form-control" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
+                                                <textarea class="form-control" name="comment" rows="4" cols="110"
+                                                          placeholder="Komentarz"></textarea>
                                                 <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
-                                                <input type="hidden" name="post_id" value="{{$comment['main']->posts_id}}">
-                                                <input style="width: auto" type="text" class="form-control form-nick" name="nick" placeholder="Podpisz się">
+                                                <input type="hidden" name="post_id"
+                                                       value="{{$comment['main']->posts_id}}">
+                                                <input style="width: auto" type="text" class="form-control form-nick"
+                                                       name="nick" placeholder="Podpisz się">
                                             </div>
                                             <button type="submit" class="btn btn-default"><b>DODAJ</b></button>
                                             <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
@@ -130,16 +136,26 @@
 
                                             {{--Odpowiedz na komentarz--}}
                                             <div class="dropdown" style="font-size: 12px">
-                                                <button class="btn btn-default" onclick="myFunction({{ $child->id }})"><b>ODPOWIEDZ</b> </button>
-                                                <div style="display:none;" class="dropdown-content myDropdown{{ $child->id }}">
-                                                    <form onsubmit="return validateForm()" class="form-comment-hidden" method="post" action="{{route('blog.savecomments',$posts->id)}}"> {{ csrf_field() }}
+                                                <button class="btn btn-default" onclick="myFunction({{ $child->id }})">
+                                                    <b>ODPOWIEDZ</b></button>
+                                                <div style="display:none;"
+                                                     class="dropdown-content myDropdown{{ $child->id }}">
+                                                    <form onsubmit="return validateForm()" class="form-comment-hidden"
+                                                          method="post"
+                                                          action="{{route('blog.savecomments',$posts->id)}}"> {{ csrf_field() }}
                                                         <div class="form-group">
-                                                            <textarea class="form-control" name="comment" rows="4" cols="110" placeholder="Komentarz"></textarea>
-                                                            <input type="hidden" name="comment_id" value="{{$comment['main']->id}}">
-                                                            <input type="hidden" name="post_id" value="{{$child->posts_id}}">
-                                                            <input style="width: auto" type="text" class="form-control form-nick" name="nick"  placeholder="Podpisz się">
+                                                            <textarea class="form-control" name="comment" rows="4"
+                                                                      cols="110" placeholder="Komentarz"></textarea>
+                                                            <input type="hidden" name="comment_id"
+                                                                   value="{{$comment['main']->id}}">
+                                                            <input type="hidden" name="post_id"
+                                                                   value="{{$child->posts_id}}">
+                                                            <input style="width: auto" type="text"
+                                                                   class="form-control form-nick" name="nick"
+                                                                   placeholder="Podpisz się">
                                                         </div>
-                                                        <button type="submit" class="btn btn-default"><b>DODAJ</b> </button>
+                                                        <button type="submit" class="btn btn-default"><b>DODAJ</b>
+                                                        </button>
                                                         <h2 class="wow fadeInUp">{{ Session::get('message') }}</h2>
 
                                                     </form>
@@ -147,15 +163,14 @@
                                             </div>
                                             @endforeach
                                         </div>
-                                            @endif
-                                        </div>
-                            </ul>
-                        </li>
-                    </ul>
-                    </ul>
+                    @endif
+                </div>
+                </ul>
+                </li>
+                </ul>
+                </ul>
             @endforeach
+        </div>
     </div>
     </div>
-    </div>
-
 @endsection

@@ -45,34 +45,25 @@
 </script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(".extra-wrap").fitVids();
     });
 </script>
 
 <script type="text/javascript">
-
     function myFunction(counter) {
-        $('.myDropdown'+counter).toggle();
+        $('.myDropdown' + counter).toggle();
     }
-
-    $(document).ready(function(){
-
-        $('.form-comment-hidden').on('submit',function(){
-
-
+    $(document).ready(function () {
+        $('.form-comment-hidden').on('submit', function () {
             var content = $(this).find('.form-content').val();
-            if(content=='') {
+            if (content == '') {
                 alert('Wypełnij pola');
             }
             console.log(content);
-
             return true;
         });
-
-
     });
-
 </script>
 
 <!--[if lt IE 9]>
@@ -94,8 +85,8 @@
 <header class="clearfix">
     <div class="container">
         <div class="box clearfix">
-        {{--<h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img--}}
-                            {{--src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>--}}
+            {{--<h1 class="navbar-brand navbar-brand_"><a href="{{URL::to('/') }}"><img--}}
+            {{--src="{{ URL::asset('img/logo.png') }}" alt="logo" width="130" height="130"></a></h1>--}}
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li class="{{ Request::is('/') ? 'active sub-menu' : '' }}">
@@ -108,21 +99,15 @@
                         <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
                     <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kontakt')}}">kontakt</a></li>
-
-
-                @if(Auth::user())
+                    @if(Auth::user())
                         <li class="{{ Request::is('filmy') ? 'active sub-menu' : '' }}">
                             <a href="{{URL::to('filmy')}}">filmy</a></li>
                         <li class="{{ Request::is('logout') ? 'active sub-menu' : '' }}">
-                        <a href="{{URL::to('logout')}}">wyloguj użytkownika {{ Auth::user()->name }}</a></li>
-
+                            <a href="{{URL::to('logout')}}">wyloguj użytkownika {{ Auth::user()->name }}</a></li>
                     @else
-
                         <li class="{{ Request::is('login') ? 'active sub-menu' : '' }}">
                             <a href="{{URL::to('login')}}">zaloguj się</a></li>
                     @endif
-
-
                 </ul>
             </nav>
         </div>
@@ -136,7 +121,6 @@
             <p class="foo_address">Ketlinga 1<br>32-020 Kraków</p>
         </div>
     </footer>
-
 
     <div class="dialogForm" style="display:none">
         <input type="hidden" id="csrf-token" name="_token" value="{{ csrf_token() }}">
@@ -157,7 +141,6 @@
     <script type="text/javascript" src="{{ URL::asset('js/tm-scripts.js') }}"></script>
 </body>
 </html>
-
 
 @stop
 

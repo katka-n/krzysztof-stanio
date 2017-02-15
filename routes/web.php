@@ -12,31 +12,20 @@
 */
 
 
-
-
-
 Route::group(['middleware' => ['web']], function () {
-
 // zapisanie adresu e-mail z index do bazy mailingowej
     Route::post('save', [
         'uses' => 'NewsletterController@store',
         'as' => 'email.save',
     ]);
-
     Route::post('/mailing', 'NewsletterController@store');
-
 });
-
-
 
 //index
 Route::get('/', [
     'uses' => 'PostController@index',
     'as' => 'index',
 ]);
-
-
-
 
 // dodawanie komentarzy widok
 Route::get('/blog/addcomments/{id}', [
@@ -69,7 +58,6 @@ Route::get('blog/archiwum/{year}/{day}', [
     'uses' => 'PostController@byDate',
     'as' => 'posts.archiwum',
 ]);
-
 
 //absolwenci
 Route::get('absolwenci', [
@@ -131,25 +119,15 @@ Route::get('logout', [
     'uses' => 'PostController@getLogout',
 ]);
 
-
-
-
-
-
-
+Auth::routes();
+Route::get('/home', 'HomeController@index');
 
 // routingi Voyagera
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');

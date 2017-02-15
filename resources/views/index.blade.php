@@ -5,8 +5,6 @@
 @section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
 
 @section('content')
-
-
     <div class="bg_pic">
         <div class="container">
             <p class="title wow fadeInDown" data-wow-delay="0.2s">OD ZERA <br>DO WEBDEVA</p>
@@ -14,7 +12,6 @@
             <p class="title wow fadeInDown" data-wow-delay="0.2s"><img class="logo" src="/img/logo.png"></p>
         </div>
     </div>
-
     <div class="global2">
         <!--content-->
         <div class="thumb-box8 center">
@@ -27,7 +24,8 @@
                                 <div class="badge">
                                     {!! polDay($posts[$i]) !!}
                                     <span>{!! polMonth($posts[$i]) !!}</span>
-                                    <strong>{!! commentsNumber($posts[$i]) !!}<img src="img/page1_icon4.png" alt=""></strong>
+                                    <strong>{!! commentsNumber($posts[$i]) !!}<img src="img/page1_icon4.png"
+                                                                                   alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
                                     <p>{{$posts[$i]['excerpt']}}</p>
@@ -88,7 +86,6 @@
                 @endforeach
             </div>
         </div>
-
         <div class="thumb-box3">
             <div class="container">
                 <h2 class="wow fadeInUp">newsletter</h2>

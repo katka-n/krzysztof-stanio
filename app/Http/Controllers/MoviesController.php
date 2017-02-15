@@ -32,12 +32,12 @@ class MoviesController extends Controller
         $moviesCategories = Moviescategory::all();
 
         $movieModel = new Movie();
-        $moviesByDates= $movieModel->archive();
+        $moviesByDates = $movieModel->archive();
 
-        return view('filmy', ['movies' => $movies,
-            'moviesCategories' => $moviesCategories,
-            'moviesByDates' => $moviesByDates]);
-
+        return view('filmy',
+            ['movies' => $movies,
+                'moviesCategories' => $moviesCategories,
+                'moviesByDates' => $moviesByDates]);
     }
 
     public function access()
@@ -64,10 +64,15 @@ class MoviesController extends Controller
     public function store(Request $request)
     {
         $user = new User();
+
         $password = (str_random(8));
+
         $data = ['password' => $password];
+
         $name = $request->input('email');
+
         $exploadedEmail = explode("@", $name);
+
         $user->name = $exploadedEmail[0];
         $user->email = $request->input('email');
         $user->password = bcrypt($password);
@@ -77,9 +82,6 @@ class MoviesController extends Controller
         $user->save();
 
         Mail::to($name)->send(new RegisterMail($user, $password));
-
-        // return redirect()->route('index');
-
     }
 
     /**
@@ -131,14 +133,16 @@ class MoviesController extends Controller
     public function single($slug)
     {
         $movie = Movie::where('slug', $slug)->first();
+
         $moviesCategories = Moviescategory::all();
+
         $movieModel = new Movie();
-        $moviesByDates= $movieModel->archive();
+        $moviesByDates = $movieModel->archive();
 
-
-        return view('filmy_film', ['movie' => $movie,
-            'moviesCategories' => $moviesCategories,
-            'moviesByDates' => $moviesByDates]);
+        return view('filmy_film',
+            ['movie' => $movie,
+                'moviesCategories' => $moviesCategories,
+                'moviesByDates' => $moviesByDates]);
     }
 
     //wyswietlanie filmow po kategorii
@@ -147,20 +151,20 @@ class MoviesController extends Controller
         $moviesCategories = Moviescategory::all();
 
         $categoriesModel = new Moviescategory();
+
         $moviesByCategories = $categoriesModel->categories($name);
 
         $movieModel = new Movie();
-        $moviesByDates= $movieModel->archive();
+        $moviesByDates = $movieModel->archive();
 
         $fiveLastMovies = Movie::orderBy('id', 'desc')->take(5)->get();
 
-        return view('filmy_kategoria', [
-            'moviesCategories' => $moviesCategories,
-            'moviesByCategories' => $moviesByCategories,
-            'moviesByDates' => $moviesByDates,
-            'fiveLastMovies' => $fiveLastMovies,
-            'name' => $name,
-        ]);
+        return view('filmy_kategoria',
+            ['moviesCategories' => $moviesCategories,
+                'moviesByCategories' => $moviesByCategories,
+                'moviesByDates' => $moviesByDates,
+                'fiveLastMovies' => $fiveLastMovies,
+                'name' => $name]);
     }
 
     //wyswietlanie filmow po dacie
@@ -174,15 +178,14 @@ class MoviesController extends Controller
         $moviesCategories = Moviescategory::all();
 
         $movieModel = new Movie();
-        $moviesByDates= $movieModel->archive();
+        $moviesByDates = $movieModel->archive();
 
         $fiveLastMovies = Movie::orderBy('id', 'desc')->take(5)->get();
 
-
-        return view('filmy_archiwum', ['movies' => $movies,
-            'moviesCategories' => $moviesCategories,
-            'moviesByDates' => $moviesByDates,
-            'fiveLastMovies' => $fiveLastMovies,
-        ]);
+        return view('filmy_archiwum',
+            ['movies' => $movies,
+                'moviesCategories' => $moviesCategories,
+                'moviesByDates' => $moviesByDates,
+                'fiveLastMovies' => $fiveLastMovies]);
     }
 }

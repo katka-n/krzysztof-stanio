@@ -11,14 +11,15 @@ class GraduatesController extends Controller
     function index()
     {
         $graduates = Graduates::orderBy('id', 'ASC')->get()->toArray();
-        return view('absolwenci', ['graduates' => $graduates]);
+        return view('absolwenci',
+            ['graduates' => $graduates]);
     }
 
     // wyswietlanie pojedynczego absolwenta
     function single_graduate($id)
     {
         $graduate = Graduates::find($id);
-        return view('absolwent', ['graduate' => $graduate]);
+        return view('absolwent',
+            ['graduate' => $graduate]);
     }
-
 }

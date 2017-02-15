@@ -11,11 +11,11 @@ namespace App\Http\Controllers;
 
 class Users
 {
-
     /**
      * Users constructor.
      */
     public function __construct()
     {
+
     }
 }

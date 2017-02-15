@@ -1,6 +1,8 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle', 'Film')
+@section('pageTitle', 'Filmy')
+@section('description','Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
+@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
 
 @section('content')
     <div class="global indent">
@@ -12,15 +14,13 @@
                     <div class="thumb-pad7 clearfix">
                         <div class="extra-wrap">
                             @foreach($movies as $movie)
-
                                 <div class="badge">
-                                {!! polDay($movie) !!}
-                                <span>{!! polMonth($movie) !!}</span>
-                                <div class="badge_small">
-                                {{--<strong>{!! commentsNumber($movie) !!}<img src="img/page2_icon1.png" alt=""></strong>--}}
+                                    {!! polDay($movie) !!}
+                                    <span>{!! polMonth($movie) !!}</span>
+                                    <div class="badge_small">
+                                        {{--<strong>{!! commentsNumber($movie) !!}<img src="img/page2_icon1.png" alt=""></strong>--}}
+                                    </div>
                                 </div>
-                                </div>
-
                                 <a href="/film/{{$movie['slug']}}" class="lnk">{{$movie['title']}}</a>
                                 <p class="post">Wysłane {{$movie['created_at']}}, w
                                     kategorii {!! categoryName($movie, $moviesCategories) !!}
@@ -36,27 +36,25 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 thumb-box4">
                     <h2 class="center indent">Kategorie filmów</h2>
                     <ul class="list1-1 indent">
                         @foreach($moviesCategories as $movieCategory)
-                            <li><a href="/filmy/kategoria/{{$movieCategory['name']}}">{{$movieCategory['name']}}</a></li>
+                            <li><a href="/filmy/kategoria/{{$movieCategory['name']}}">{{$movieCategory['name']}}</a>
+                            </li>
                         @endforeach
                     </ul>
                     <h2 class="center indent">Archiwum filmów</h2>
                     <ul class="list1-1">
                         @foreach($moviesByDates as $movie)
-                            <li><a href="/filmy/archiwum/{{$movie->year}}/{{$movie->month}}">{!! fullMonth($movie) !!} {{$movie->year}}</a></li>
+                            <li>
+                                <a href="/filmy/archiwum/{{$movie->year}}/{{$movie->month}}">{!! fullMonth($movie) !!} {{$movie->year}}</a>
+                            </li>
                         @endforeach
-
                     </ul>
                 </div>
-
             </div>
-
         </div>
     </div>
 @endsection

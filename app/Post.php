@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
-    public function archive() {
+    public function archive()
+    {
         return $this
             ->select(DB::raw('count(id) as `data`'))
             ->select(DB::raw("DATE_FORMAT(created_at, '%m-%Y') new_date"))
@@ -19,4 +20,3 @@ class Post extends Model
             ->get();
     }
 }
-

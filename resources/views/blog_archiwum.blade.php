@@ -18,7 +18,8 @@
                                     {!! polDay($post) !!}
                                     <span>{!! polMonth($post) !!}</span>
                                     <div class="badge_small">
-                                        <strong>{!! commentsNumber($post) !!}<img src="/img/page2_icon1.png" alt=""></strong>
+                                        <strong>{!! commentsNumber($post) !!}<img src="/img/page2_icon1.png"
+                                                                                  alt=""></strong>
                                     </div>
                                 </div>
                                 <a href="/blog/notka/{{$post['slug']}}" class="lnk">{{$post['title']}}</a>
@@ -50,14 +51,13 @@
                     <h2 class="center indent">Archiwum wpisów</h2>
                     <ul class="list1-1 indent">
                         @foreach($postsByDates as $post)
-                            <li><a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a></li>
+                            <li>
+                                <a href="/blog/archiwum/{{$post['year']}}/{{$post['month']}}">{!! fullMonth($post) !!} {{$post['year']}}  </a>
+                            </li>
                         @endforeach
-
                     </ul>
                 </div>
-
             </div>
-
         </div>
     </div>
 @endsection

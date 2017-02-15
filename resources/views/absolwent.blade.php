@@ -41,18 +41,19 @@
                                                 <li>telefon: {{$graduate['contact_phone']}}</li>
                                             @endif
                                             @if( ! empty($graduate['social_account']))
-                                                <li><a href="{!! $graduate['social_account']!!}">Strona internetowa</a></li>
+                                                <li><a href="{!! $graduate['social_account']!!}">Strona internetowa</a>
+                                                </li>
                                             @endif
                                             @endif
                                         </ul>
                                         @if( ! empty($graduate['github_account']))
                                             <h3>Portfolio</h3>
                                             <ul class="list1-1">
-                                            <li><a href="{!! $graduate['github_account']!!}">Github</a></li>
+                                                <li><a href="{!! $graduate['github_account']!!}">Github</a></li>
                                             </ul>
                                         @endif
                                 </div>
-                            </div>
+                            </div>a
                         </div>
                     </div>
                 </div>
@@ -60,4 +61,3 @@
         </div>
     </div>
 @endsection
-
