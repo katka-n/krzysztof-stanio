@@ -43,7 +43,7 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('Otrzymujesz niniejszą wiadomość z powodu wysłania żądania resetu hasła do Twojego konta.')
+            ->line('Poniżej znajduje się przycisk do zmiany Twojego hasła na stronie Od Zera do WebDeva.')
             ->action('Zresetuj hasło', url('password/reset', $this->token))
             ->line('Jeśli to nie Ty zażądałeś zmiany hasła, nic nie musisz robić - zignoruj ten e-mail.');
     }
