@@ -33,7 +33,9 @@
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInLeft">
+                            <div class="last_entry">
                             <figure><img src="/storage/{!! $posts[$i]['image'] !!}" alt=""></figure>
+                        </div>
                         </div>
                     </div>
                     <a href="{{ URL::action('PostController@blog_index') }}" class="btn-default btn1">Zobacz wszystkie

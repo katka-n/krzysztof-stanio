@@ -540,6 +540,7 @@ footer span {
 	padding: 52px 35px 43px 50px;
 	overflow: hidden;
 	text-align: left;
+	height: 239px;
 }
 
 .date-box > div .badge {
@@ -1810,4 +1811,8 @@ div.reply {
 	padding-top: 35px;
 	height: 0;
 	overflow: hidden;
+}
+
+.last_entry img {
+	width: 100%
 }
