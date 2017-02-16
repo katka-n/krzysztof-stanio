@@ -28,7 +28,7 @@
                                                                                    alt=""></strong>
                                 </div>
                                 <div class="extra-wrap">
-                                    <p>{{$posts[$i]['excerpt']}}</p>
+                                    <p>{!! postTruncate($posts[$i]) !!}</p>
                                 </div>
                             </div>
                         </div>
