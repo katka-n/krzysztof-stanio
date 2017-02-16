@@ -28,9 +28,9 @@ function year($posts)
 
 function postTruncate($posts)
 {
-    $data = $posts['body'];
-    if (strlen($data) > 200) {
-        return $truncated = substr($data, 0, strrpos(substr($data, 0, 200), ' ')) . "...";
+    $data = strip_tags($posts['body']);
+    if (mb_strlen($data) > 150) {
+        return $truncated = substr($data, 0, strrpos(substr($data, 0, 150), ' ')) . "...";
     }
 }
 
