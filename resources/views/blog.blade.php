@@ -28,7 +28,7 @@
                                     <br></p>
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <p> {!!$post['body']!!}.</p>
+                                        <p> {!!$post['body']!!}</p>
                                     </div>
                                 </div>
                             @endforeach

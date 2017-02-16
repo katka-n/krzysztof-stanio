@@ -492,7 +492,7 @@ footer span {
 	overflow: hidden;
 	padding: 62px 0 67px 0;
 	text-align: center;
-	background: #555a78 url(../img/triangle.png) center top no-repeat;
+	background: #555a78 url(../img/triangle2.png) center top no-repeat;
 }
 .thumb-box3 h2 {
 	color: #ffffff;
@@ -540,7 +540,7 @@ footer span {
 	padding: 52px 35px 43px 50px;
 	overflow: hidden;
 	text-align: left;
-	height: 239px;
+	min-height: 239px;
 }
 
 .date-box > div .badge {
