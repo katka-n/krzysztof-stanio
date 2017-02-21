@@ -1,8 +1,20 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle')Absolwenci - {{$graduate['name']}} @endsection
-@section('description','App. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
-@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
+@section('pageTitle')
+{{$graduate['name']}} - Absolwenci -
+@endsection
+
+@section('description')
+{{$graduate['name']}} - Absolwenci szkoleń prowadzonych przez Krzysztof Stanio 
+@endsection
+
+@section('keywords')
+{{$graduate['name']}}, szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper
+@endsection
+
+@section('livechat')
+    @include('livechat')
+@endsection
 
 @section('content')
     <!--header-->

@@ -1,8 +1,12 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle', 'Absolwenci')
-@section('description','App. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
-@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
+@section('pageTitle', 'Absolwenci szkoleń')
+@section('description','Absolwenci szkoleń prowadzonych przez Krzysztof Stanio')
+@section('keywords', 'szkolenia, absolwenci, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
+
+@section('livechat')
+    @include('livechat')
+@endsection
 
 @section('content')
     <!--header-->
@@ -20,12 +24,11 @@
                                         <img src="/storage/{{$graduate['photo']}}" class="thumbnail" alt="">
                                     </figure>
                                     <div class="caption">
-                                        <p><b>{{$graduate['name']}}</b></p>
+                                        <p><b><a title="{{$graduate['name']}}" href="/absolwent/{{$graduate['id']}}"
+                                       class="btn-default btn1">{{$graduate['name']}}</a></b></p>
                                         {!!$graduate['description']!!}
                                     </div>
-                                    <a href="/absolwent/{{$graduate['id']}}"
-                                       class="btn-default btn1">
-                                        Czytaj dalej...</a>
+                    
                                 </div>
                             </div>
                         </div>

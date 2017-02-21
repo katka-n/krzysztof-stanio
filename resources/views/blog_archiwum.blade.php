@@ -1,8 +1,8 @@
 @extends('layouts.base-layout')
 
 @section('pageTitle', 'Blog - archiwum')
-@section('description','App. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
-@section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
+@section('description','Blog o programowania webowym Krzysztofa Stanio')
+@section('keywords', 'blog, krzysztof stanio, php, javascript, html, css, mysql, laravel, symfony, angular, jquery, vue')
 
 @section('content')
     <div class="global indent">

@@ -1,4 +1,7 @@
 @extends('layouts.base-layout')
+@section('pageTitle', 'Blog - Krzysztof Stanio')
+@section('description','Blog o programowania webowym Krzysztofa Stanio')
+@section('keywords', 'blog, krzysztof stanio, php, javascript, html, css, mysql, laravel, symfony, angular, jquery, vue')
 
 @section('content')
     <div class="global indent">

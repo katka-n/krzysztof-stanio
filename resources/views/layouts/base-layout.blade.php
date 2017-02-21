@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('pageTitle')- od zera do WebDeva</title>
+    <title>@yield('pageTitle') - od Zera do WebDeva</title>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#2E344B">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon"/>
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="dyktek" content="Krzysztof Stanio">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-84651817-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    @yield('livechat')
+
 </head>
 
 <!--CSS-->
@@ -99,15 +113,6 @@
                         <a href="{{URL::to('absolwenci')}}">absolwenci kursu</a></li>
                     <li class="{{ Request::is('kontakt') ? 'active sub-menu' : '' }}">
                         <a href="{{URL::to('kontakt')}}">kontakt</a></li>
-                    @if(Auth::user())
-                        <li class="{{ Request::is('filmy') ? 'active sub-menu' : '' }}">
-                            <a href="{{URL::to('filmy')}}">filmy</a></li>
-                        <li class="{{ Request::is('logout') ? 'active sub-menu' : '' }}">
-                            <a href="{{URL::to('logout')}}">wyloguj użytkownika {{ Auth::user()->name }}</a></li>
-                    @else
-                        <li class="{{ Request::is('login') ? 'active sub-menu' : '' }}">
-                            <a href="{{URL::to('login')}}">zaloguj się</a></li>
-                    @endif
                 </ul>
             </nav>
         </div>

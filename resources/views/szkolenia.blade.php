@@ -1,8 +1,12 @@
 @extends('layouts.base-layout')
 
-@section('pageTitle', 'Kurs')
-@section('description','App. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
+@section('pageTitle', 'Szkolenia programistyczne PHP, Krzysztof Stanio, Boot Camp 2017 - zostań z nami webdeveloperem')
+@section('description','Od zera do Webdeva. Skorzystaj z naszego szkolenia i zdobądź umiejetności w dziedzinie programowania. Zapraszamy!')
 @section('keywords', 'szkolenia, PHP, JavaScript, CSS, HTML5, kursy programistyczne, szkolenia programistyczne, jak zostać programistą, Kraków, boot camp, Krzysztof Stanio, symfony, angular, laravel, webdeveloper')
+
+@section('livechat')
+    @include('livechat')
+@endsection
 
 @section('content')
     <div class="global indent">
@@ -53,7 +57,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <ul class="list1-1">
-                            <li> Start najbliższej edycji:<b> marzec 2017</b></li>
+                            <li> Start najbliższej edycji:<b>17 marca 2017</b></li>
                             <li>Czas trwania:<b> 6 tygodni (edycja weekendowo-wieczorowa)</b></li>
                             <li>Liczba godzin:<b> 157 </b></li>
                             <li>Opłata za rezerwację:<b> 100 zł</b></li>
