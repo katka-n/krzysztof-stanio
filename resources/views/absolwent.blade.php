@@ -65,7 +65,7 @@
                                             </ul>
                                         @endif
                                 </div>
-                            </div>a
+                            </div>
                         </div>
                     </div>
                 </div>
