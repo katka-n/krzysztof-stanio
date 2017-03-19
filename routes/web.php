@@ -131,3 +131,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::post('admin/posts', [
+    'as' => 'voyager.posts.store',
+    'uses' => 'VoyagerController@store',
+]);

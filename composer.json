@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "tcg/voyager": "^0.10.10",
         "laravelcollective/html": "^5.3",
-        "barryvdh/laravel-debugbar": "^2.3"
+        "barryvdh/laravel-debugbar": "^2.3",
+        "devdojo/chatter": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -18,6 +19,12 @@
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/fwartner/chatter"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database"
